@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PapaJohns</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://unpkg.com/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            max-width: 95%;
+            margin: auto;
+        }
+
+        .menu {
+            background-color: #f1f1f1;
+            margin-bottom: 10px;
+        }
+
+        .menu ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            font-weight: bold;
+            color: #363636;
+        }
+
+        .menu ul li a {
+            text-decoration: none;
+            color: #363636;
+            font-size: 18px;
+        }
+
+
+        .container {
+            max-width: 95%;
+            margin: auto;
+        }
+
+        .menu {
+            background-color: #f1f1f1;
+            margin-bottom: 10px;
+        }
+
+        .menu ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            font-weight: bold;
+            color: #363636;
+        }
+
+        .menu ul li a {
+            text-decoration: none;
+            color: #363636;
+            font-size: 18px;
+        }
+
+        .desert-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin: 10px;
+            padding: 15px;
+            width: 300px;
+            height: 450px;
+            display: inline-block;
+            vertical-align: top;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .desert-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .desert-details {
+            text-align: center;
+            margin-top: 10px;
+            height: calc(100% - 220px);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <nav class="desktop-nav">
+                <ul class="menu-list">
+                    <li><a href="#restoranlar">Restoranlar</a></li>
+                    <li><a href="#papabonus">PapaBonus</a></li>
+                </ul>
+            </nav>
+            <div class="user-options">
+                <div class="language-selector">
+                    <img src="img/flag_az.png" alt="azflag">
+                    <p>Azerbaycanca</p>
+                </div>
+                <div class="login">Giriş/Qeydiyyat</div>
+            </div>
+        </div>
+    </header>
+
+    <div class="menu-bar">
+        <a href="#" class="logo">
+            <img src="img/pj_logo_web_new.png" alt="logo">
+        </a>
+        <ul class="menu-list">
+            <li><a href="index.html">Kampaniyalar</a></li>
+            <li><a href="papadies.html">Papadies</a></li>
+            <li><a href="pizzalar.html">Pizza</a></li>
+            <li><a href="lunch.html">Qəlyanaltılar</a></li>
+            <li><a href="salat.html">Salat</a></li>
+            <li><a href="pasta.html">Pasta</a></li>
+            <li><a href="souslar.html">Souslar</a></li>
+            <li><a href="drink.html">İçki</a></li>
+            <li><a href="desert.html">Desertlər</a></li>
+        </ul>
+    </div>
+
+    <section class="promo-c">
+        <div class="promo-wrapper">
+            <div class="promo-code">
+                <p>Promo kodunuz var? <span>Endirimdən istifadə edin!</span></p>
+            </div>
+            <div class="inp-code">
+                <input type="text" class="promo-input" placeholder="Promo kodu daxil edin">
+                <button class="promo-button">OK</button>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="menu">
+            <ul>
+                <li><a href="#">Tiramisu</a></li>
+                <li><a href="#">Tiramisu</a></li>
+                <li><a href="#">Dondurma</a></li>
+            </ul>
+        </div>
+
+        <div class="container">
+            <div id="carddesert" class="carddesert"></div>
+        </div>
+
+        <footer class="footer" style="margin-top: 15px;">
+            <div class="footer-container">
+                <div class="footer-left">
+                    <span class="footer-text">© PJA 2024</span>
+                </div>
+
+                <ul class="footer-links">
+                    <li><a href="#">Haqqımızda</a></li>
+                    <li><a href="#">Sual və Cavab</a></li>
+                    <li><a href="#">Karyera</a></li>
+                    <li><a href="#">Xəmir</a></li>
+                    <li><a href="#">Papa Talk - Şərtlər və Qaydalar</a></li>
+                </ul>
+            </div>
+        </footer>
+
+        <script>
+            const desertData = [
+                {
+                    img: "https://order.papajohns.az/images/menu/PJ%20Azerbaijan/336x224_ad0d3c2bd3dfd02d2291c92b3da4b380.jpg",
+                    title: "Tiramisu",
+                    price: "7",
+                    id: "LqUOx499IGm5KS69gzWCW",
+                },
+                {
+                    img: "https://order.papajohns.az/images/menu/PJ%20Azerbaijan/336x224_1586374dc56f6447a659ff607eb2ff25.jpg",
+                    title: "Şokoladlı Sufle",
+                    price: "5",
+                    id: "Rl_H4YpvxFumTx-sND0V5",
+                },
+                {
+                    img: "https://order.papajohns.az/images/menu/PJ%20Azerbaijan/336x224_cea02388c7e67f4ca204e3ee470e819f.jpg",
+                    title: "Dondurma",
+                    price: "2",
+                    id: "mK-6aVd-B5Ndw3DrHCvQF",
+                }
+            ];
+
+            const cardContainer = document.getElementById("carddesert");
+
+            desertData.forEach((desert) => {
+                const card = document.createElement("div");
+                card.classList.add("desert-card");
+
+                card.innerHTML = `
+                <img src="${desert.img}" alt="${desert.title}" class="desert-img" />
+                <div class="desert-details">
+                    <h3>${desert.title}</h3>
+                    <div class="desert-price">${desert.price}₼</div>
+                </div>
+            `;
+                cardContainer.appendChild(card);
+            });
+        </script>
+
+</body>
+
+</html>
