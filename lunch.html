@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PapaJohns</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://unpkg.com/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+    <link rel="stylesheet" href="style.css">
+    <style>
+ * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            max-width: 95%;
+            margin: auto;
+        }
+
+        .menu {
+            background-color: #f1f1f1;
+            margin-bottom: 10px;
+        }
+
+        .menu ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            font-weight: bold;
+            color: #363636;
+        }
+
+        .menu ul li a {
+            text-decoration: none;
+            color: #363636;
+            font-size: 18px;
+        }
+        #cards-lunch {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.lunch-card {
+    width: calc(25% - 20px); /* 4 sütunlu görünüş üçün */
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.lunch-card:hover {
+    transform: translateY(-5px);
+}
+
+.lunch-img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-bottom: 2px solid #ddd;
+}
+
+.lunch-details {
+    padding: 15px;
+}
+
+.lunch-details h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.lunch-details p {
+    font-size: 14px;
+    color: #666;
+}
+
+.lunch-price {
+    font-size: 16px;
+    font-weight: bold;
+    color: #e63946;
+    margin-top: 10px;
+}
+
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <nav class="desktop-nav">
+                <ul class="menu-list">
+                    <li><a href="#restoranlar">Restoranlar</a></li>
+                    <li><a href="#papabonus">PapaBonus</a></li>
+                </ul>
+            </nav>
+            <div class="user-options">
+                <div class="language-selector">
+                    <img src="img/flag_az.png" alt="azflag">
+                    <p>Azerbaycanca</p>
+                </div>
+                <div class="login">Giriş/Qeydiyyat</div>
+            </div>
+        </div>
+    </header>
+
+    <div class="menu-bar">
+        <a href="#" class="logo">
+            <img src="img/pj_logo_web_new.png" alt="logo">
+        </a>
+        <ul class="menu-list">
+            <li><a href="index.html">Kampaniyalar</a></li>
+            <li><a href="papadies.html">Papadies</a></li>
+            <li><a href="pizzalar.html">Pizza</a></li>
+            <li><a href="lunch.html">Qəlyanaltılar</a></li>
+            <li><a href="#salat">Salat</a></li>
+            <li><a href="#pasta">Pasta</a></li>
+            <li><a href="#souslar">Souslar</a></li>
+            <li><a href="#icki">İçki</a></li>
+            <li><a href="#desertler">Desertlər</a></li>
+        </ul>
+    </div>
+
+    <section class="promo-c">
+        <div class="promo-wrapper">
+            <div class="promo-code">
+                <p>Promo kodunuz var? <span>Endirimdən istifadə edin!</span></p>
+            </div>
+            <div class="inp-code">
+                <input type="text" class="promo-input" placeholder="Promo kodu daxil edin">
+                <button class="promo-button">OK</button>
+            </div>
+        </div>
+    </section>
+
+
+    <div class="container">
+        <div class="menu">
+            <ul>
+                <li><a href="#">Hamısı</a></li>
+                <li><a href="#">Toyuqlu</a></li>
+                <li><a href="#">Ət ilə</a></li>
+                <li><a href="#">Vegetarian</a></li>
+                <li><a href="#">Acılı</a></li>
+            </ul>
+        </div>
+        <div id="cards-lunch" class="cards-lunch"></div>
+
+
+    </div>
+
+
+
+    <footer class="footer" style="margin-top: 15px;">
+        <div class="footer-container">
+            <div class="footer-left">
+                <span class="footer-text">© PJA 2024</span>
+            </div>
+
+            <ul class="footer-links">
+                <li><a href="#">Haqqımızda</a></li>
+                <li><a href="#">Sual və Cavab</a></li>
+                <li><a href="#">Karyera</a></li>
+                <li><a href="#">Xəmir</a></li>
+                <li><a href="#">Papa Talk - Şərtlər və Qaydalar</a></li>
+            </ul>
+        </div>
+    </footer>
+
+
+
+    <script>
+        const luchData = [
+            {
+                img: "https://order.papajohns.az/images/menu/PJ%20Azerbaijan/336x224_305cb7fe83f207951f2fa33840d51938.jpg",
+                title: "Pepperoni Rolls",
+                composition: "8 ədəd roll, Pizza-Sous",
+                price: "9",
+                category: "qalyanaltilar",
+                variations: [],
+                id: "FZv6qE3czddyXcsPNugrG",
+            },
+            {
+                img: "https://order.papajohns.az/images/menu/PJ%20Azerbaijan/336x224_1490edc2b75e6b911ff0688ef21cf75e.jpg",
+                title: "Cheddar Rolls ",
+                composition: "8 ədəd roll, Pizza-Sous",
+                price: "9",
+                category: "qalyanaltilar",
+                variations: [],
+                id: "8VV_biUJlxgO0O2IffnHJ",
+            },
+            {
+                img: "https://order.papajohns.az/images/menu/PJ%20Azerbaijan/336x224_3228ebb7bb5d266f598cc27e2a7af05c.jpg",
+                title: "Çiken Rolls",
+                composition: "Qril Toyuğu, Turşu Xiyar, Mozzarella Pendiri, Ranç Sousu",
+                price: "9",
+                category: "qalyanaltilar",
+                variations: [],
+                id: "O7J-mgCfR2ozRkdqNTU5C",
+            },
+            {
+                img: "https://order.papajohns.az/images/menu/PJ%20Azerbaijan/336x224_f307d270999251d9e39730bc930f3cae.jpg",
+                title: "Acılı Çiken Rolls",
+                composition:
+                    "Qril Toyuğu, Halapeno Bibəri, Mozzarella Pendiri, Ranç Sousu",
+                price: "9",
+                category: "qalyanaltilar",
+                variations: [],
+                id: "6XN5XJiPROXkak5EU0cjg",
+            },
+            {
+                img: "https://order.papajohns.az/images/menu/PJ%20Azerbaijan/336x224_d1d450cddca70334681bcb47a9ef15cb.jpg",
+                title: "Cheddar Pendirli Çubuqlar",
+                composition: "1 ədəd Pizza sousu, 1 ədəd sarımsaq sousu",
+                price: "9",
+                category: "qalyanaltilar",
+                variations: [],
+                id: "fsH2cBcOmsHUW3xC3VyMb",
+            },
+            {
+                img: "https://order.papajohns.az/images/menu/PJ%20Azerbaijan/336x224_778eeba1701e27a7e588448fa59274b8.jpg",
+                title: "Pendirli Çubuqlar",
+                composition: " Sarımsaq Sousu, Pizza-Sous",
+                price: "7",
+                category: "qalyanaltilar",
+                variations: [],
+                id: "tAdon4jRY33T7ZLIi0sT5",
+            },
+            {
+                img: "https://order.papajohns.az/images/menu/PJ%20Azerbaijan/336x224_9899000d4a87b161975f77d17ade89f2.jpg",
+                title: "Vetçina və Göbələkli Çubuqlar",
+                composition: "Sarımsaq Sousu, Vetçina, Göbələk, Mozzarella",
+                price: "9",
+                category: "qalyanaltilar",
+                variations: [],
+                id: "NMSCI_Jks9Uw9n0ASSggu",
+            },
+            {
+                img: "https://order.papajohns.az/images/menu/PJ%20Azerbaijan/336x224_437e1050c4734d2a567df699308fa2c7.jpg",
+                title: "Küncütlü Pendirli Çubuqlar",
+                composition: "Sarımsaq Sousu, Mozzarella, Küncüt",
+                price: "8",
+                category: "qalyanaltilar",
+                variations: [],
+                id: "LmUbRtShRGFV4sWl0rIJx",
+            },
+            {
+                img: "https://order.papajohns.az/images/menu/PJ%20Azerbaijan/336x224_2b328d7ec01601154c30030b95c1e51b.jpg",
+                title: "Sarımsaqlı Çubuqlar",
+                composition: "Sarımsaq Sousu, Pizza-Sous",
+                price: "3",
+                category: "qalyanaltilar",
+                variations: [],
+                id: "g-T5qOh1aGE8vhVfdcrMK",
+            },
+            {
+                img: "https://order.papajohns.az/images/menu/PJ%20Azerbaijan/336x224_ad11ce5af9801f29710eec91449dd295.jpg",
+                title: "Çiken Poppers BBQ ",
+                composition: "150 qram",
+                price: "6",
+                category: "qalyanaltilar",
+                variations: [],
+                id: "am5-K4n64G7BegMvwWZoT",
+            },
+            {
+                img: "https://order.papajohns.az/images/menu/PJ%20Azerbaijan/336x224_225e3de38654e53c1da1ef0022bef1c2.jpg",
+                title: "Kalzone, Qril Toyuğu və Göbələk",
+                composition: "Qril Toyuğu, Göbələk, Sarımsaq Sousu, Mozzarella ",
+                price: "6",
+                category: "qalyanaltilar",
+                variations: [],
+                id: "yYqpNE4R6TUOV6MsLGJGW",
+            },
+            {
+                img: "https://order.papajohns.az/images/menu/PJ%20Azerbaijan/336x224_3b1677d0e8d3aaba0b33fd3e465063f5.jpg",
+                title: "Kalzone, Pepperoni və İtalyan Sosisi",
+                composition: "Pepperoni, İtalyan Sosisləri, Sarımsaq Sousu, Mozzarella ",
+                price: "6",
+                category: "qalyanaltilar",
+                variations: [],
+                id: "2Zx4jxh4QrW0bgGRcjpzl",
+            },
+            {
+                img: "https://order.papajohns.az/images/menu/PJ%20Azerbaijan/336x224_03f7fd6f5ef482929b803c762fca496d.jpg",
+                title: "Pendirli mütəkkələr",
+                composition: "1 ədəd Pizza sousu, 1 ədəd Sarımsaq sousu",
+                price: "10",
+                category: "qalyanaltilar",
+                variations: [],
+                id: "kdgUp2zTgsmbNOpQYf4yP",
+            },
+            {
+                img: "https://order.papajohns.az/images/menu/PJ%20Azerbaijan/336x224_40fdeaa67ec64a8b72eb0c38d3802403.jpg",
+                title: "Toyuq Qanadları",
+                composition: "Barbekyu və ya Baffalo sousu ilə (250 gr)",
+                price: "9",
+                category: "qalyanaltilar",
+                variations: [],
+                id: "9iyX49FajRbm4ARaQYvXA",
+            },
+            {
+                img: "https://order.papajohns.az/images/menu/PJ%20Azerbaijan/336x224_1a262425388a3bc72e78973c59c5231b.jpg",
+                title: "Kartof Dilimləri",
+                composition: "200 qram",
+                price: "4.9",
+                category: "qalyanaltilar",
+                variations: [],
+                id: "4KFYnIxCe1n5CTPvEzM-G",
+            },
+            {
+                img: "https://order.papajohns.az/images/menu/PJ%20Azerbaijan/336x224_461c8b5494d24b06508b527ff271292f.jpg",
+                title: "Çiken Poppersləri",
+                composition: "150 qram",
+                price: "6",
+                category: "qalyanaltilar",
+                variations: [],
+                id: "FyzDz2x93NuoLfDz8xzKJ",
+            },
+        ]
+
+
+        const cardContainer = document.getElementById("cards-lunch");
+
+        luchData.forEach((item) => {
+            const card = document.createElement("div");
+            card.classList.add("lunch-card");
+
+            card.innerHTML = `
+        <img src="${item.img}" alt="${item.title}" class="lunch-img" />
+        <div class="lunch-details">
+            <h3>${item.title}</h3>
+            <p>${item.composition}</p>
+            <div class="lunch-price">${item.price}₼</div>
+        </div>
+    `;
+            cardContainer.appendChild(card);
+        });
+
+    </script>
+</body>
+
+</html>
