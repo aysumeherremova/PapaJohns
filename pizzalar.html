@@ -1,0 +1,1684 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PapaJohns</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://unpkg.com/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            max-width: 95%;
+            margin: auto;
+        }
+
+        .menu {
+            background-color: #f1f1f1;
+            margin-bottom: 10px;
+        }
+
+        .menu ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            font-weight: bold;
+            color: #363636;
+        }
+
+        .menu ul li a {
+            text-decoration: none;
+            color: #363636;
+            font-size: 18px;
+        }
+
+        .pizza-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin: 10px;
+            padding: 15px;
+            width: 300px;
+            height: 450px;
+            display: inline-block;
+            vertical-align: top;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .pizza-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .pizza-details {
+            text-align: center;
+            margin-top: 10px;
+            height: calc(100% - 220px);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+
+        .pizza-details h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .pizza-details p {
+            font-size: 1em;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .pizza-variations {
+            margin: 10px 0;
+        }
+
+        .variation {
+            margin: 5px 0;
+            font-size: 0.9em;
+            color: #777;
+        }
+
+        .pizza-price {
+            margin-top: 15px;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #333;
+        }
+      
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <nav class="desktop-nav">
+                <ul class="menu-list">
+                    <li><a href="#restoranlar">Restoranlar</a></li>
+                    <li><a href="#papabonus">PapaBonus</a></li>
+                </ul>
+            </nav>
+            <div class="user-options">
+                <div class="language-selector">
+                    <img src="img/flag_az.png" alt="azflag">
+                    <p>Azerbaycanca</p>
+                </div>
+                <div class="login">Giriş/Qeydiyyat</div>
+            </div>
+        </div>
+    </header>
+
+    <div class="menu-bar">
+        <a href="#" class="logo">
+            <img src="img/pj_logo_web_new.png" alt="logo">
+        </a>
+        <ul class="menu-list">
+            <li><a href="index.html">Kampaniyalar</a></li>
+            <li><a href="papadies.html">Papadies</a></li>
+            <li><a href="pizzalar.html">Pizza</a></li>
+            <li><a href="#qelyanaltılar">Qəlyanaltılar</a></li>
+            <li><a href="#salat">Salat</a></li>
+            <li><a href="#pasta">Pasta</a></li>
+            <li><a href="#souslar">Souslar</a></li>
+            <li><a href="#icki">İçki</a></li>
+            <li><a href="#desertler">Desertlər</a></li>
+        </ul>
+    </div>
+
+    <section class="promo-c">
+        <div class="promo-wrapper">
+            <div class="promo-code">
+                <p>Promo kodunuz var? <span>Endirimdən istifadə edin!</span></p>
+            </div>
+            <div class="inp-code">
+                <input type="text" class="promo-input" placeholder="Promo kodu daxil edin">
+                <button class="promo-button">OK</button>
+            </div>
+        </div>
+    </section>
+
+
+    <div class="container">
+        <div class="menu">
+            <ul>
+                <li><a href="#">Hamısı</a></li>
+                <li><a href="#">Toyuqlu</a></li>
+                <li><a href="#">Ət ilə</a></li>
+                <li><a href="#">Vegetarian</a></li>
+                <li><a href="#">Acılı</a></li>
+            </ul>
+        </div>
+        <div id="cardspizza" class="cardspizza"></div>
+
+
+    </div>
+
+
+
+    <footer class="footer" style="margin-top: 15px;">
+        <div class="footer-container">
+            <div class="footer-left">
+                <span class="footer-text">© PJA 2024</span>
+            </div>
+
+            <ul class="footer-links">
+                <li><a href="#">Haqqımızda</a></li>
+                <li><a href="#">Sual və Cavab</a></li>
+                <li><a href="#">Karyera</a></li>
+                <li><a href="#">Xəmir</a></li>
+                <li><a href="#">Papa Talk - Şərtlər və Qaydalar</a></li>
+            </ul>
+        </div>
+    </footer>
+
+
+
+
+
+
+    <script>
+        const pizzaData = [
+            {
+                title: "Çiken Parmezan",
+                composition:
+                    "Pizza sousu, Çiken Poppersləri, Sarımsaqlı parmesan sousu, Göbələk, İtalyan Ədviyyatları, Mozzarella ",
+                img: "https://www.papajohns.az/images/Chicken-Ranch-x%C4%B1r%C3%A7%C4%B1rt%C4%B1l%C4%B1-p-800.jpeg",
+                price: "11",
+                subcategory: ["cheeken"],
+                category: "pizza",
+                variations: [
+                    {
+                        type: "Ənənəvi",
+                        price: "11",
+                        size: "Kiçik, 23 sm -  11 M",
+                    },
+                    {
+                        type: "Nazik",
+                        price: "11",
+                        size: "Kiçik, 23 sm -  11 M",
+                    },
+                    {
+                        type: "Ənənəvi",
+                        price: "17",
+                        size: "Orta, 30 sm -  17 M",
+                    },
+                    {
+                        type: "Ənənəvi",
+                        price: "21",
+                        size: "Böyük, 35 sm -  21 M",
+                    },
+                    {
+                        type: "Nazik",
+                        price: "17",
+                        size: "Orta, 30 sm -  17 M",
+                    },
+                    {
+                        type: "Nazik",
+                        price: "21",
+                        size: "Böyük, 35 sm -  21 M",
+                    },
+                ],
+                id: "eqtdV7d1X33VkB9rOC_Jd",
+            },
+            {
+                title: "Qril Çiken Parmezan",
+                composition:
+                    "Pizza sousu, Sarımsaqlı Parmezan sousu, Qril Toyuğu, Vetçina, Pomidor, Mozzarella, Halapeno Bibəri.",
+                img: "https://www.papajohns.az/images/Spaysi-Italyan-x%C4%B1r%C3%A7%C4%B1lt%C4%B1l%C4%B1-p-800.jpeg",
+                price: "5.5",
+                subcategory: ["hot"],
+                category: "pizza",
+                variations: [
+                    {
+                        type: "Ənənəvi",
+                        price: "5.5",
+                        size: "Mini pizza, 15 sm -  5.5 M",
+                    },
+                    {
+                        type: "Nazik",
+                        price: "11",
+                        size: "Kiçik, 23 sm -  11 M",
+                    },
+                    {
+                        type: "Ənənəvi",
+                        price: "11",
+                        size: "Kiçik, 23 sm -  11 M",
+                    },
+                    {
+                        type: "Nazik",
+                        price: "17",
+                        size: "Orta, 30 sm -  17 M",
+                    },
+                    {
+                        type: "Ənənəvi",
+                        price: "17",
+                        size: "Orta, 30 sm -  17 M",
+                    },
+                    {
+                        type: "Ənənəvi",
+                        price: "21",
+                        size: "Böyük, 35 sm -  21 M",
+                    },
+                    {
+                        type: "Nazik",
+                        price: "21",
+                        size: "Böyük, 35 sm -  21 M",
+                    },
+                ],
+                id: "tMcRbeMZzjbSUWZVSmxAW",
+            },
+            {
+                title: "Amerikan Hot",
+                composition: "Pizza Sousu, Mozzarella, Pepperoni, Halapeno Bibəri",
+                img: "https://www.papajohns.az/images/Pepperoni-x%C4%B1r%C3%A7%C4%B1lt%C4%B1l%C4%B1-p-800.jpeg",
+                price: "5.5",
+                subcategory: ["hot"],
+                category: "pizza",
+                variations: [
+                    {
+                        type: "Ənənəvi",
+                        price: "5.5",
+                        size: "Mini pizza, 15 sm -  5.5 M",
+                    },
+                    {
+                        type: "Ənənəvi",
+                        price: "9",
+                        size: "Kiçik, 23 sm -  9 M",
+                    },
+                    {
+                        type: "Ənənəvi",
+                        price: "14",
+                        size: "Orta, 30 sm -  14 M",
+                    },
+                    {
+                        type: "Ənənəvi",
+                        price: "19",
+                        size: "Böyük, 35 sm -  19 M",
+                    },
+                    {
+                        type: "Nazik",
+                        price: "14",
+                        size: "Orta, 30 sm -  14 M",
+                    },
+                    {
+                        type: "Nazik",
+                        price: "19",
+                        size: "Böyük, 35 sm -  19 M",
+                    },
+                    {
+                        type: "Nazik",
+                        price: "9",
+                        size: "Kiçik, 23 sm -  9 M",
+                    },
+                ],
+                id: "4W3O5ET9thkewAEFAej-J",
+            },
+            {
+                title: "Acılı Çiken Ranç",
+                composition:
+                    "Ranç Sousu, Qril Toyuğu, Göbələk,  Halapeno Bibəri, Pomidor, Mozzarella ",
+                img: "https://www.papajohns.az/images/4-Pendir-x%C4%B1r%C3%A7%C4%B1lt%C4%B1l%C4%B1-p-800.jpeg",
+                price: "5.5",
+                subcategory: ["cheeken", "hot"],
+                category: "pizza",
+                variations: [
+                    {
+                        type: "Ənənəvi",
+                        price: "5.5",
+                        size: "Mini pizza, 15 sm -  5.5 M",
+                    },
+                    {
+                        type: "Ənənəvi",
+                        price: "11",
+                        size: "Kiçik, 23 sm -  11 M",
+                    },
+                    {
+                        type: "Ənənəvi",
+                        price: "16",
+                        size: "Orta, 30 sm -  16 M",
+                    },
+                    {
+                        type: "Ənənəvi",
+                        price: "22",
+                        size: "Böyük, 35 sm -  22 M",
+                    },
+                    {
+                        type: "Nazik",
+                        price: "11",
+                        size: "Kiçik, 23 sm -  11 M",
+                    },
+                    {
+                        type: "Nazik",
+                        price: "16",
+                        size: "Orta, 30 sm -  16 M",
+                    },
+                    {
+                        type: "Nazik",
+                        price: "22",
+                        size: "Böyük, 35 sm -  22 M",
+                    },
+                ],
+                id: "WI-lpUm85l7h9ToCWhdwJ",
+            },
+            {
+                title: "Karnaval",
+                composition: "Pizza Sousu, Göbələk, Qara Zeytun, Pepperoni, Mozzarella ",
+                img: "https://www.papajohns.az/images/Pepperoni-x%C4%B1r%C3%A7%C4%B1lt%C4%B1l%C4%B1-p-800.jpeg",
+                price: "9",
+                subcategory: [],
+                category: "pizza",
+                variations: [
+                    {
+                        type: "Ənənəvi",
+                        price: "9",
+                        size: "Kiçik, 23 sm -  9 M",
+                    },
+                    {
+                        type: "Ənənəvi",
+                        price: "14",
+                        size: "Orta, 30 sm -  14 M",
+                    },
+                    {
+                        type: "Ənənəvi",
+                        price: "19",
+                        size: "Böyük, 35 sm -  19 M",
+                    },
+                    {
+                        type: "Nazik",
+                        price: "9",
+                        size: "Kiçik, 23 sm -  9 M",
+                    },
+                    {
+                        type: "Nazik",
+                        price: "14",
+                        size: "Orta, 30 sm -  14 M",
+                    },
+                    {
+                        type: "Nazik",
+                        price: "19",
+                        size: "Böyük, 35 sm -  19 M",
+                    },
+                ],
+                id: "lsfle5gwoS1JYOOYsOu4G",
+            },
+            {
+                title: "NY Style Margarita (40 sm)",
+                composition: "Pizza Sousu, Mozzarella, Pomidor, Oreqano",
+                img: "https://www.papajohns.az/images/4-Pendir-x%C4%B1r%C3%A7%C4%B1lt%C4%B1l%C4%B1-p-800.jpeg",
+                price: "20",
+                subcategory: [],
+                category: "pizza",
+                variations: [],
+                id: "qlEY-kGyJBmXVMg7-aAlc",
+            },
+            {
+                title: "NY Style Grill Chicken (40sm)",
+                composition: "Pizza Sousu, Qril Toyuğu, Mozzarella, Pomidor",
+                img: "https://www.papajohns.az/images/Spaysi-Italyan-x%C4%B1r%C3%A7%C4%B1lt%C4%B1l%C4%B1-p-800.jpeg",
+                price: "26",
+                subcategory: [],
+                category: "pizza",
+                variations: [],
+                id: "hj1vpBBSiAHYkY9ql-BAp",
+            },
+            {
+                title: "NY Style Pepperoni (40 sm)",
+                composition: "Pizza Sousu, Pepperoni, Mozzarella ",
+                img: "https://www.papajohns.az/images/Chicken-Ranch-x%C4%B1r%C3%A7%C4%B1rt%C4%B1l%C4%B1-p-800.jpeg",
+                price: "23",
+                subcategory: [],
+                category: "pizza",
+                variations: [],
+                id: "RMgpKFeqlk4t9r-tVCQpF",
+            },
+            {
+                title: "Cheddar Dabl Burger",
+                composition: "1000 ada sousu, Mal əti, Pomidor, Mozzarella, Cheddar",
+                img: "https://www.papajohns.az/images/Chicken-Ranch-x%C4%B1r%C3%A7%C4%B1rt%C4%B1l%C4%B1-p-800.jpeg",
+                price: "12",
+                subcategory: [],
+                category: "pizza",
+                variations: [
+                    {
+                        type: "Ənənəvi",
+                        price: "12",
+                        size: "Kiçik, 23 sm -  12 M",
+                    },
+                    {
+                        type: "Ənənəvi",
+                        price: "20",
+                        size: "Orta, 30 sm -  20 M",
+                    },
+                    {
+                        type: "Ənənəvi",
+                        price: "25",
+                        size: "Böyük, 35 sm -  25 M",
+                    },
+                    {
+                        type: "Nazik",
+                        price: "12",
+                        size: "Kiçik, 23 sm -  12 M",
+                    },
+                    {
+                        type: "Nazik",
+                        price: "20",
+                        size: "Orta, 30 sm -  20 M",
+                    },
+                    {
+                        type: "Nazik",
+                        price: "25",
+                        size: "Böyük, 35 sm -  25 M",
+                    },
+                ],
+                id: "vbXseAqErlzV8atr_-0My",
+            },
+            {
+                title: "Çiken Ranç",
+                composition: "Ranç sousu, Qril Toyuğu, Pomidor,  Mozzarella ",
+                img: "https://www.papajohns.az/images/Spaysi-Italyan-x%C4%B1r%C3%A7%C4%B1lt%C4%B1l%C4%B1-p-800.jpeg",
+                price: "5.5",
+                subcategory: [],
+                category: "pizza",
+                variations: [
+                    {
+                        type: "Ənənəvi",
+                        price: "5.5",
+                        size: "Mini pizza, 17 sm -  5.5 M",
+                    },
+                    {
+                        type: "Ənənəvi",
+                        price: "11",
+                        size: "Kiçik, 23 sm -  11 M",
+                    },
+                    {
+                        type: "Ənənəvi",
+                        price: "16",
+                        size: "Orta, 30 sm -  16 M",
+                    },
+                    {
+                        type: "Ənənəvi",
+                        price: "22",
+                        size: "Böyük, 35 sm -  22 M",
+                    },
+                    {
+                        type: "Nazik",
+                        price: "11",
+                        size: "Kiçik, 23 sm -  11 M",
+                    },
+                    {
+                        type: "Nazik",
+                        price: "16",
+                        size: "Orta, 30 sm -  16 M",
+                    },
+                    {
+                        type: "Nazik",
+                        price: "22",
+                        size: "Böyük, 35 sm -  22 M",
+                    },
+                ],
+                id: "OvMcW7F9wdM619lbtxc2S",
+            },
+            {
+                title: "Papa Miks",
+                composition: "Çiken Barbekyu, Hot&Spaysi, Marqarita, Klassik Pepperoni",
+                img: "https://www.papajohns.az/images/4-Pendir-x%C4%B1r%C3%A7%C4%B1lt%C4%B1l%C4%B1-p-800.jpeg",
+                price: "20",
+                subcategory: [],
+                category: "pizza",
+                variations: [
+                    {
+                        type: "Ənənəvi",
+                        price: "20",
+                        size: "Çiken BBQ, Hot&Spaysi, Marqarita, Klassik Pepperoni -  20 M",
+                    },
+                ],
+                id: "FLvaQ4EYLwwfSZ07FaLxE",
+            },
+            {
+                title: "Acılı Vegetarian",
+                composition:
+                    "Pizza Sousu, Halapeno Bibəri, Pomidor, Göbələk, Qara Zeytun, Yaşıl Bibər, Mozzarella ",
+                img: "https://www.papajohns.az/images/Pepperoni-x%C4%B1r%C3%A7%C4%B1lt%C4%B1l%C4%B1-p-800.jpeg",
+                price: "5.5",
+                subcategory: ["vegan", "hot"],
+                category: "pizza",
+                variations: [
+                    {
+                        type: "Ənənəvi",
+                        price: "5.5",
+                        size: "Mini pizza, 15 sm -  5.5 M",
+                    },
+                    {
+                        type: "Ənənəvi",
+                        price: "9",
+                        size: "Kiçik, 23 sm -  9 M",
+                    },
+                    {
+                        type: "Ənənəvi",
+                        price: "13",
+                        size: "Orta, 30 sm -  13 M",
+                    },
+                    {
+                        type: "Ənənəvi",
+                        price: "18",
+                        size: "Böyük, 35 sm -  18 M",
+                    },
+                    {
+                        type: "Nazik",
+                        price: "13",
+                        size: "Kiçik, 23 sm -  13 M",
+                    },
+                    {
+                        type: "Nazik",
+                        price: "18",
+                        size: "Böyük, 35 sm -  18 M",
+                    },
+                    {
+                        type: "Nazik",
+                        price: "9",
+                        size: "Kiçik, 23 sm -  9 M",
+                    },
+                ],
+                id: "WCKuOjBFVbt9JcwaXvYuh",
+            },
+            {
+                title: "4 Pendir",
+                composition:
+                    "Pizza sousu, Mozzarella, Feta, Parmezan və Cheddar Pendirləri",
+                img: "https://www.papajohns.az/images/Pepperoni-x%C4%B1r%C3%A7%C4%B1lt%C4%B1l%C4%B1-p-800.jpeg",
+                price: "11",
+                subcategory: [],
+                category: "pizza",
+                variations: [
+                    {
+                        type: "Ənənəvi",
+                        price: "11",
+                        size: "Kiçik, 23 sm -  11 M",
+                    },
+                    {
+                        type: "Nazik",
+                        price: "11",
+                        size: "Kiçik, 23 sm -  11 M",
+                    },
+                    {
+                        type: "Ənənəvi",
+                        price: "16",
+                        size: "Orta, 30 sm -  16 M",
+                    },
+                    {
+                        type: "Nazik",
+                        price: "16",
+                        size: "Orta, 30 sm -  16 M",
+                    },
+                    {
+                        type: "Ənənəvi",
+                        price: "22",
+                        size: "Böyük, 35 sm -  22 M",
+                    },
+                    {
+                        type: "Nazik",
+                        price: "22",
+                        size: "Böyük, 35 sm -  22 M",
+                    },
+                ],
+                id: "-aTxaJD9K03fV0couZBp-",
+            },
+            {
+                title: "Cheddar Çiken Club",
+                composition:
+                    "Pizza sousu, Qril toyuğu, Pomidor, Vetçina, Mozzarella, Cheddar, Ranç sousu",
+                img: "https://www.papajohns.az/images/4-Pendir-x%C4%B1r%C3%A7%C4%B1lt%C4%B1l%C4%B1-p-800.jpeg",
+                price: "11",
+                subcategory: [],
+                category: "pizza",
+                variations: [
+                    {
+                        type: "Ənənəvi",
+                        price: "11",
+                        size: "Kiçik, 23 sm -  11 M",
+                    },
+                    {
+                        type: "Ənənəvi",
+                        price: "18",
+                        size: "Orta, 30 sm -  18 M",
+                    },
+                    {
+                        type: "Ənənəvi",
+                        price: "22",
+                        size: "Böyük, 35 sm -  22 M",
+                    },
+                    {
+                        type: "Nazik",
+                        price: "22",
+                        size: "Böyük, 35 sm -  22 M",
+                    },
+                    {
+                        type: "Nazik",
+                        price: "18",
+                        size: "Orta, 30 sm -  18 M",
+                    },
+                    {
+                        type: "Nazik",
+                        price: "11",
+                        size: "Kiçik, 23 sm -  11 M",
+                    },
+                ],
+                id: "6aG4F1Sdx6hxSmpaxRomx",
+            },
+            {
+                title: "Çiken Barbekyu",
+                composition:
+                    "Pizza sousu, Qril Toyuğu, Göbələk, Barbekyu Sousu, Mozzarella ",
+                img: "https://www.papajohns.az/images/Spaysi-Italyan-x%C4%B1r%C3%A7%C4%B1lt%C4%B1l%C4%B1-p-800.jpeg",
+                price: "5.5",
+                subcategory: ["cheeken"],
+                category: "pizza",
+                variations: [
+                    {
+                        type: "Ənənəvi",
+                        price: "5.5",
+                        size: "Mini pizza, 17 sm -  5.5 M",
+                    },
+                    {
+                        type: "Ənənəvi",
+                        price: "10",
+                        size: "Kiçik, 23 sm -  10 M",
+                    },
+                    {
+                        type: "Ənənəvi",
+                        price: "16",
+                        size: "Orta, 30 sm -  16 M",
+                    },
+                    {
+                        type: "Nazik",
+                        price: "10",
+                        size: "Kiçik, 23 sm -  10 M",
+                    },
+                    {
+                        type: "Nazik",
+                        price: "16",
+                        size: "Orta, 30 sm -  16 M",
+                    },
+                    {
+                        type: "Ənənəvi",
+                        price: "22",
+                        size: "Böyük, 35 sm -  22 M",
+                    },
+                    {
+                        type: "Nazik",
+                        price: "22",
+                        size: "Böyük, 35 sm -  22 M",
+                    },
+                ],
+                id: "Jg8nHSg8MLUK9jrh0pAtH",
+            },
+            {
+                title: "Meksika",
+                composition:
+                    "Pizza sousu, Qril Toyuğu, Pomidor, Göbələk, Yaşıl Bibər, Halapeno Bibəri, Mozzarella ",
+                img: "https://www.papajohns.az/images/Chicken-Ranch-x%C4%B1r%C3%A7%C4%B1rt%C4%B1l%C4%B1-p-800.jpeg",
+                price: "5.5",
+                subcategory: ["cheeken", "hot"],
+                category: "pizza",
+                variations: [
+                    {
+                        type: "Ənənəvi",
+                        price: "5.5",
+                        size: "Mini pizza, 17 sm -  5.5 M",
+                    },
+                    {
+                        type: "Ənənəvi",
+                        price: "9",
+                        size: "Kiçik, 23 sm -  9 M",
+                    },
+                    {
+                        type: "Ənənəvi",
+                        price: "15",
+                        size: "Orta, 30 sm -  15 M",
+                    },
+                    {
+                        type: "Ənənəvi",
+                        price: "20",
+                        size: "Böyük, 35 sm -  20 M",
+                    },
+                    {
+                        type: "Nazik",
+                        price: "9",
+                        size: "Kiçik, 23 sm -  9 M",
+                    },
+                    {
+                        type: "Nazik",
+                        price: "15",
+                        size: "Orta, 30 sm -  15 M",
+                    },
+                    {
+                        type: "Nazik",
+                        price: "20",
+                        size: "Böyük, 35 sm -  20 M",
+                    },
+                ],
+                id: "J8FwVqgk3_iUbvYEXifSn",
+            },
+            {
+                title: "Super Papa",
+                composition:
+                    "Pizza sousu, Pepperoni, İtalyan Sosisi, Vetçina, Göbələk, Yaşıl Bibər, Qara Zeytun, Mozzarella ",
+                img: "https://www.papajohns.az/images/Chicken-Ranch-x%C4%B1r%C3%A7%C4%B1rt%C4%B1l%C4%B1-p-800.jpeg",
+                price: "12",
+                subcategory: ["meat"],
+                category: "pizza",
+                variations: [
+                    {
+                        type: "Ənənəvi",
+                        price: "12",
+                        size: "Kiçik, 23 sm -  12 M",
+                    },
+                    {
+                        type: "Ənənəvi",
+                        price: "18",
+                        size: "Orta, 30 sm -  18 M",
+                    },
+                    {
+                        type: "Ənənəvi",
+                        price: "23",
+                        size: "Böyük, 35 sm -  23 M",
+                    },
+                    {
+                        type: "Nazik",
+                        price: "12",
+                        size: "Kiçik, 23 sm -  12 M",
+                    },
+                    {
+                        type: "Nazik",
+                        price: "18",
+                        size: "Orta, 30 sm -  18 M",
+                    },
+                    {
+                        type: "Nazik",
+                        price: "23",
+                        size: "Böyük, 35 sm -  23 M",
+                    },
+                ],
+                id: "qaE-Gq9cxGDDmnCrQhN_L",
+            },
+            {
+                title: "Yunan",
+                composition:
+                    "Pizza sousu, Pomidor, Pepperonçini, Qara Zeytun, Feta Pendiri, Oreqano, Mozzarella Pendiri",
+                img: "https://www.papajohns.az/images/Spaysi-Italyan-x%C4%B1r%C3%A7%C4%B1lt%C4%B1l%C4%B1-p-800.jpeg",
+                price: "8",
+                subcategory: ["vegan", "hot"],
+                category: "pizza",
+                variations: [
+                    {
+                        type: "Ənənəvi",
+                        price: "8",
+                        size: "Kiçik, 23 sm -  8 M",
+                    },
+                    {
+                        type: "Ənənəvi",
+                        price: "13",
+                        size: "Orta, 30 sm -  13 M",
+                    },
+                    {
+                        type: "Ənənəvi",
+                        price: "16",
+                        size: "Böyük, 35 sm -  16 M",
+                    },
+                    {
+                        type: "Nazik",
+                        price: "8",
+                        size: "Kiçik, 23 sm -  8 M",
+                    },
+                    {
+                        type: "Nazik",
+                        price: "13",
+                        size: "Orta, 30 sm -  13 M",
+                    },
+                    {
+                        type: "Nazik",
+                        price: "16",
+                        size: "Böyük, 35 sm -  16 M",
+                    },
+                ],
+                id: "JTG9ZHwbk2D74rfg2T4kZ",
+            },
+            {
+                title: "Çiken Çizburger",
+                composition:
+                    "1000 ada sousu, Qril Toyuğu, Turşu Xiyar, Pomidor, Mozzarella ",
+                img: "https://www.papajohns.az/images/4-Pendir-x%C4%B1r%C3%A7%C4%B1lt%C4%B1l%C4%B1-p-800.jpeg",
+                price: "12",
+                subcategory: ["cheeken"],
+                category: "pizza",
+                variations: [
+                    {
+                        type: "Ənənəvi",
+                        price: "12",
+                        size: "Kiçik, 23 sm -  12 M",
+                    },
+                    {
+                        type: "Ənənəvi",
+                        price: "19",
+                        size: "Orta, 30 sm -  19 M",
+                    },
+                    {
+                        type: "Ənənəvi",
+                        price: "23",
+                        size: "Böyük, 35 sm -  23 M",
+                    },
+                    {
+                        type: "Nazik",
+                        price: "12",
+                        size: "Kiçik, 23 sm -  12 M",
+                    },
+                    {
+                        type: "Nazik",
+                        price: "19",
+                        size: "Orta, 30 sm -  19 M",
+                    },
+                    {
+                        type: "Nazik",
+                        price: "23",
+                        size: "Böyük, 35 sm -  23 M",
+                    },
+                ],
+                id: "MwbtxDjrw6WhJUbOeybs_",
+            },
+            {
+                title: "Marqarita",
+                composition: "Pizza sousu, Pomidor, Oreqano, Ekstra Mozzarella ",
+                img: "https://www.papajohns.az/images/Pepperoni-x%C4%B1r%C3%A7%C4%B1lt%C4%B1l%C4%B1-p-800.jpeg",
+                price: "5.5",
+                subcategory: ["vegan"],
+                category: "pizza",
+                variations: [
+                    {
+                        type: "Ənənəvi",
+                        price: "5.5",
+                        size: "Mini pizza, 17 sm -  5.5 M",
+                    },
+                    {
+                        type: "Ənənəvi",
+                        price: "8",
+                        size: "Kiçik, 23 sm -  8 M",
+                    },
+                    {
+                        type: "Ənənəvi",
+                        price: "13",
+                        size: "Orta, 30 sm -  13 M",
+                    },
+                    {
+                        type: "Ənənəvi",
+                        price: "16",
+                        size: "Böyük, 35 sm -  16 M",
+                    },
+                    {
+                        type: "Nazik",
+                        price: "8",
+                        size: "Kiçik, 23 sm -  8 M",
+                    },
+                    {
+                        type: "Nazik",
+                        price: "13",
+                        size: "Orta, 30 sm -  13 M",
+                    },
+                    {
+                        type: "Nazik",
+                        price: "16",
+                        size: "Böyük, 35 sm -  16 M",
+                    },
+                ],
+                id: "VvP2Artn-992jWOIlAjQ8",
+            },
+            {
+                title: "Qarışıq Ət",
+                composition:
+                    "Pizza sousu, Pepperoni, İtalyan Sosisi, Mal Əti, Vetçina, Mozzarella ",
+                img: "https://www.papajohns.az/images/Pepperoni-x%C4%B1r%C3%A7%C4%B1lt%C4%B1l%C4%B1-p-800.jpeg",
+                price: "14",
+                subcategory: ["meat"],
+                category: "pizza",
+                variations: [
+                    {
+                        type: "Ənənəvi",
+                        price: "14",
+                        size: "Kiçik, 23 sm -  14 M",
+                    },
+                    {
+                        type: "Ənənəvi",
+                        price: "22",
+                        size: "Orta, 30 sm -  22 M",
+                    },
+                    {
+                        type: "Ənənəvi",
+                        price: "28",
+                        size: "Böyük, 35 sm -  28 M",
+                    },
+                    {
+                        type: "Nazik",
+                        price: "14",
+                        size: "Kiçik, 23 sm -  14 M",
+                    },
+                    {
+                        type: "Nazik",
+                        price: "22",
+                        size: "Orta, 30 sm -  22 M",
+                    },
+                    {
+                        type: "Nazik",
+                        price: "28",
+                        size: "Böyük, 35 sm -  28 M",
+                    },
+                ],
+                id: "rnc4l77WUYE8KPlG0Ot1k",
+            },
+            {
+                title: "Vegetarian",
+                composition:
+                    "Pizza sousu, Pomidor, Göbələk, Yaşıl Bibər, Qara Zeytun, Mozzarella ",
+                img: "https://www.papajohns.az/images/4-Pendir-x%C4%B1r%C3%A7%C4%B1lt%C4%B1l%C4%B1-p-800.jpeg",
+                price: "5.5",
+                subcategory: ["vegan"],
+                category: "pizza",
+                variations: [
+                    {
+                        type: "Ənənəvi",
+                        price: "5.5",
+                        size: "Mini pizza, 17 sm -  5.5 M",
+                    },
+                    {
+                        type: "Ənənəvi",
+                        price: "9",
+                        size: "Kiçik, 23 sm -  9 M",
+                    },
+                    {
+                        type: "Ənənəvi",
+                        price: "13",
+                        size: "Orta, 30 sm -  13 M",
+                    },
+                    {
+                        type: "Ənənəvi",
+                        price: "18",
+                        size: "Böyük, 35 sm -  18 M",
+                    },
+                    {
+                        type: "Nazik",
+                        price: "9",
+                        size: "Kiçik, 23 sm -  9 M",
+                    },
+                    {
+                        type: "Nazik",
+                        price: "13",
+                        size: "Orta, 30 sm -  13 M",
+                    },
+                    {
+                        type: "Nazik",
+                        price: "18",
+                        size: "Böyük, 35 sm -  18 M",
+                    },
+                ],
+                id: "KcO7mTzchPV4XpJ-vIEUQ",
+            },
+            {
+                title: "Spaysi İtalyan",
+                composition:
+                    "Pizza sousu, İtalyan sosisi, Pepperoni, Pul bibər, Mozarella.",
+                img: "https://www.papajohns.az/images/Spaysi-Italyan-x%C4%B1r%C3%A7%C4%B1lt%C4%B1l%C4%B1-p-800.jpeg",
+                price: "13",
+                subcategory: [],
+                category: "pizza",
+                variations: [
+                    {
+                        type: "Ənənəvi",
+                        price: "13",
+                        size: "Kiçik, 23 sm -  13 M",
+                    },
+                    {
+                        type: "Ənənəvi",
+                        price: "21",
+                        size: "Orta, 30 sm -  21 M",
+                    },
+                    {
+                        type: "Ənənəvi",
+                        price: "27",
+                        size: "Böyük, 35 sm -  27 M",
+                    },
+                    {
+                        type: "Nazik",
+                        price: "13",
+                        size: "Kiçik, 23 sm -  13 M",
+                    },
+                    {
+                        type: "Nazik",
+                        price: "21",
+                        size: "Orta, 30 sm -  21 M",
+                    },
+                    {
+                        type: "Nazik",
+                        price: "27",
+                        size: "Böyük, 35 sm -  27 M",
+                    },
+                ],
+                id: "mabUrM4PThXfuxWZp271h",
+            },
+            {
+                title: "Rastik ",
+                composition:
+                    "BBQ sousu, İtalyan sosisi, Pepperoni, Göbələk, Yaşıl bibər, Mozzarella",
+                img: "https://www.papajohns.az/images/Chicken-Ranch-x%C4%B1r%C3%A7%C4%B1rt%C4%B1l%C4%B1-p-800.jpeg",
+                price: "10",
+                subcategory: [],
+                category: "pizza",
+                variations: [
+                    {
+                        type: "Ənənəvi",
+                        price: "10",
+                        size: "Kiçik, 23 sm -  10 M",
+                    },
+                    {
+                        type: "Ənənəvi",
+                        price: "15",
+                        size: "Orta, 30 sm -  15 M",
+                    },
+                    {
+                        type: "Ənənəvi",
+                        price: "20",
+                        size: "Böyük, 35 sm -  20 M",
+                    },
+                    {
+                        type: "Nazik",
+                        price: "10",
+                        size: "Kiçik, 23 sm -  10 M",
+                    },
+                    {
+                        type: "Nazik",
+                        price: "15",
+                        size: "Orta, 30 sm -  15 M",
+                    },
+                    {
+                        type: "Nazik",
+                        price: "20",
+                        size: "Böyük, 35 sm -  20 M",
+                    },
+                    {
+                        type: "Ənənəvi",
+                        price: "5.5",
+                        size: "Mini pizza, 17 sm -  5.5 M",
+                    },
+                ],
+                id: "lRL4SQrRYD_mHXuHmPb_a",
+            },
+            {
+                title: "Qarışıq ət BBQ",
+                composition:
+                    "BBQ sousu, İtalyan sosisi, Mal əti, Vetçina, Pepperoni, Mozzarella",
+                img: "https://www.papajohns.az/images/Pepperoni-x%C4%B1r%C3%A7%C4%B1lt%C4%B1l%C4%B1-p-800.jpeg",
+                price: "15",
+                subcategory: [],
+                category: "pizza",
+                variations: [
+                    {
+                        type: "Ənənəvi",
+                        price: "15",
+                        size: "Kiçik, 23 sm -  15 M",
+                    },
+                    {
+                        type: "Ənənəvi",
+                        price: "23",
+                        size: "Orta, 30 sm -  23 M",
+                    },
+                    {
+                        type: "Ənənəvi",
+                        price: "29",
+                        size: "Böyük, 35 sm -  29 M",
+                    },
+                    {
+                        type: "Nazik",
+                        price: "15",
+                        size: "Kiçik, 23 sm -  15 M",
+                    },
+                    {
+                        type: "Nazik",
+                        price: "23",
+                        size: "Orta, 30 sm -  23 M",
+                    },
+                    {
+                        type: "Nazik",
+                        price: "29",
+                        size: "Böyük, 35 sm -  29 M",
+                    },
+                ],
+                id: "0xw-QO-E30J_c-IQiTTV-",
+            },
+            {
+                title: "Bonanza",
+                composition:
+                    "BBQ sousu, Mal əti, Vetçina, Pomidor, Mozzarella, Halapeno Bibəri",
+                img: "https://www.papajohns.az/images/Chicken-Ranch-x%C4%B1r%C3%A7%C4%B1rt%C4%B1l%C4%B1-p-800.jpeg",
+                price: "13",
+                subcategory: [],
+                category: "pizza",
+                variations: [
+                    {
+                        type: "Ənənəvi",
+                        price: "13",
+                        size: "Kiçik, 23 sm -  13 M",
+                    },
+                    {
+                        type: "Ənənəvi",
+                        price: "20",
+                        size: "Orta, 30 sm -  20 M",
+                    },
+                    {
+                        type: "Ənənəvi",
+                        price: "25",
+                        size: "Böyük, 35 sm -  25 M",
+                    },
+                    {
+                        type: "Nazik",
+                        price: "13",
+                        size: "Kiçik, 23 sm -  13 M",
+                    },
+                    {
+                        type: "Nazik",
+                        price: "20",
+                        size: "Orta, 30 sm -  20 M",
+                    },
+                    {
+                        type: "Nazik",
+                        price: "25",
+                        size: "Böyük, 35 sm -  25 M",
+                    },
+                ],
+                id: "fwBriqYXxA0y7Uv4dcml_",
+            },
+            {
+                title: "Dabl Çizburger",
+                composition: "1000 ada sousu, Mal Əti, Turşu Xiyar, Pomidor, Mozzarella ",
+                img: "https://www.papajohns.az/images/4-Pendir-x%C4%B1r%C3%A7%C4%B1lt%C4%B1l%C4%B1-p-800.jpeg",
+                price: "12",
+                subcategory: ["meat"],
+                category: "pizza",
+                variations: [
+                    {
+                        type: "Ənənəvi",
+                        price: "12",
+                        size: "Kiçik, 23 sm -  12 M",
+                    },
+                    {
+                        type: "Ənənəvi",
+                        price: "19",
+                        size: "Orta, 30 sm -  19 M",
+                    },
+                    {
+                        type: "Ənənəvi",
+                        price: "23",
+                        size: "Böyük, 35 sm -  23 M",
+                    },
+                    {
+                        type: "Nazik",
+                        price: "12",
+                        size: "Kiçik, 23 sm -  12 M",
+                    },
+                    {
+                        type: "Nazik",
+                        price: "19",
+                        size: "Orta, 30 sm -  19 M",
+                    },
+                    {
+                        type: "Nazik",
+                        price: "23",
+                        size: "Böyük, 35 sm -  23 M",
+                    },
+                ],
+                id: "4_e0cNmHzRfy8Eu0wrvTA",
+            },
+            {
+                title: "Havay",
+                composition: "Pizza sousu, Qril Toyuğu, Ananas, Ekstra Mozzarella",
+                img: "https://www.papajohns.az/images/Spaysi-Italyan-x%C4%B1r%C3%A7%C4%B1lt%C4%B1l%C4%B1-p-800.jpeg",
+                price: "5.5",
+                subcategory: ["cheeken"],
+                category: "pizza",
+                variations: [
+                    {
+                        type: "Ənənəvi",
+                        price: "5.5",
+                        size: "Mini pizza, 17 sm -  5.5 M",
+                    },
+                    {
+                        type: "Ənənəvi",
+                        price: "10",
+                        size: "Kiçik, 23 sm -  10 M",
+                    },
+                    {
+                        type: "Ənənəvi",
+                        price: "18",
+                        size: "Orta, 30 sm -  18 M",
+                    },
+                    {
+                        type: "Ənənəvi",
+                        price: "23",
+                        size: "Böyük, 35 sm -  23 M",
+                    },
+                    {
+                        type: "Nazik",
+                        price: "10",
+                        size: "Kiçik, 23 sm -  10 M",
+                    },
+                    {
+                        type: "Nazik",
+                        price: "18",
+                        size: "Orta, 30 sm -  18 M",
+                    },
+                    {
+                        type: "Nazik",
+                        price: "23",
+                        size: "Böyük, 35 sm -  23 M",
+                    },
+                ],
+                id: "EoeQc7wZMPHHx6-URxVHL",
+            },
+            {
+                title: "Vestern Barbekyu",
+                composition: "Mal Əti, Göbələk, Barbekyu Sousu, Mozzarella Pendiri",
+                img: "https://www.papajohns.az/images/Pepperoni-x%C4%B1r%C3%A7%C4%B1lt%C4%B1l%C4%B1-p-800.jpeg",
+                price: "5.5",
+                subcategory: ["meat"],
+                category: "pizza",
+                variations: [
+                    {
+                        type: "Ənənəvi",
+                        price: "5.5",
+                        size: "Mini pizza, 17 sm -  5.5 M",
+                    },
+                    {
+                        type: "Ənənəvi",
+                        price: "10",
+                        size: "Kiçik, 23 sm -  10 M",
+                    },
+                    {
+                        type: "Ənənəvi",
+                        price: "16",
+                        size: "Orta, 30 sm -  16 M",
+                    },
+                    {
+                        type: "Ənənəvi",
+                        price: "22",
+                        size: "Böyük, 35 sm -  22 M",
+                    },
+                    {
+                        type: "Nazik",
+                        price: "10",
+                        size: "Kiçik, 23 sm -  10 M",
+                    },
+                    {
+                        type: "Nazik",
+                        price: "16",
+                        size: "Orta, 30 sm -  16 M",
+                    },
+                    {
+                        type: "Nazik",
+                        price: "22",
+                        size: "Böyük, 35 sm -  22 M",
+                    },
+                ],
+                id: "p867Y-U9iR0UvgJt1wyNl",
+            },
+            {
+                title: "Klassik Pepperoni",
+                composition: "Pepperoni, Ekstra Mozzarella",
+                img: "https://www.papajohns.az/images/Chicken-Ranch-x%C4%B1r%C3%A7%C4%B1rt%C4%B1l%C4%B1-p-800.jpeg",
+                price: "5.5",
+                subcategory: ["meat"],
+                category: "pizza",
+                variations: [
+                    {
+                        type: "Ənənəvi",
+                        price: "5.5",
+                        size: "Mini pizza, 17 sm -  5.5 M",
+                    },
+                    {
+                        type: "Ənənəvi",
+                        price: "9",
+                        size: "Kiçik, 23 sm -  9 M",
+                    },
+                    {
+                        type: "Ənənəvi",
+                        price: "14",
+                        size: "Orta, 30 sm -  14 M",
+                    },
+                    {
+                        type: "Ənənəvi",
+                        price: "19",
+                        size: "Böyük, 35 sm -  19 M",
+                    },
+                    {
+                        type: "Nazik",
+                        price: "9",
+                        size: "Kiçik, 23 sm -  9 M",
+                    },
+                    {
+                        type: "Nazik",
+                        price: "14",
+                        size: "Orta, 30 sm   -  14 M",
+                    },
+                    {
+                        type: "Nazik",
+                        price: "19",
+                        size: "Böyük, 35 sm -  19 M",
+                    },
+                ],
+                id: "ZIvN-kGG6GsmYMvJm14J_",
+            },
+            {
+                title: "Hot and Spaysi",
+                composition:
+                    "Pizza sousu, Mal Əti, Pomidor, Yaşıl Bibər, Halapeno Bibəri, Mozzarella ",
+                img: "https://www.papajohns.az/images/Spaysi-Italyan-x%C4%B1r%C3%A7%C4%B1lt%C4%B1l%C4%B1-p-800.jpeg",
+                price: "5.5",
+                subcategory: ["meat", "hot"],
+                category: "pizza",
+                variations: [
+                    {
+                        type: "Ənənəvi",
+                        price: "5.5",
+                        size: "Mini pizza, 17 sm -  5.5 M",
+                    },
+                    {
+                        type: "Ənənəvi",
+                        price: "10",
+                        size: "Kiçik, 23 sm -  10 M",
+                    },
+                    {
+                        type: "Ənənəvi",
+                        price: "16",
+                        size: "Orta, 30 sm -  16 M",
+                    },
+                    {
+                        type: "Ənənəvi",
+                        price: "21",
+                        size: "Böyük, 35 sm -  21 M",
+                    },
+                    {
+                        type: "Nazik",
+                        price: "10",
+                        size: "Kiçik, 23 sm -  10 M",
+                    },
+                    {
+                        type: "Nazik",
+                        price: "16",
+                        size: "Orta, 30 sm -  16 M",
+                    },
+                    {
+                        type: "Nazik",
+                        price: "21",
+                        size: "Böyük, 35 sm -  21 M",
+                    },
+                ],
+                id: "bCcqe-4LcJscIHp-0itpH",
+            },
+            {
+                title: "Marinera",
+                composition:
+                    "Pizza sousu, Ton Balığı, Yaşıl Bibər, Qara Zeytun, Mozzarella ",
+                img: "https://www.papajohns.az/images/Pepperoni-x%C4%B1r%C3%A7%C4%B1lt%C4%B1l%C4%B1-p-800.jpeg",
+                price: "5.5",
+                subcategory: ["meat"],
+                category: "pizza",
+                variations: [
+                    {
+                        type: "Ənənəvi",
+                        price: "5.5",
+                        size: "Mini pizza, 17 sm -  5.5 M",
+                    },
+                    {
+                        type: "Ənənəvi",
+                        price: "10",
+                        size: "Kiçik, 23 sm -  10 M",
+                    },
+                    {
+                        type: "Ənənəvi",
+                        price: "18",
+                        size: "Orta, 30 sm -  18 M",
+                    },
+                    {
+                        type: "Ənənəvi",
+                        price: "22",
+                        size: "Böyük, 35 sm -  22 M",
+                    },
+                    {
+                        type: "Nazik",
+                        price: "10",
+                        size: "Kiçik, 23 sm -  10 M",
+                    },
+                    {
+                        type: "Nazik",
+                        price: "18",
+                        size: "Orta, 30 sm -  18 M",
+                    },
+                    {
+                        type: "Nazik",
+                        price: "22",
+                        size: "Böyük, 35 sm -  22 M",
+                    },
+                ],
+                id: "Pd01XJfzbdh-BOxDAyKG2",
+            },
+            {
+                title: "Litl İtaliya",
+                composition:
+                    "Pizza sousu, Pepperoni, İtalyan Sosisi, Göbələk, Qara Zeytun, Oreqano, Mozzarella ",
+                img: "https://www.papajohns.az/images/Chicken-Ranch-x%C4%B1r%C3%A7%C4%B1rt%C4%B1l%C4%B1-p-800.jpeg",
+                price: "11",
+                subcategory: ["meat"],
+                category: "pizza",
+                variations: [
+                    {
+                        type: "Ənənəvi",
+                        price: "11",
+                        size: "Kiçik, 23 sm -  11 M",
+                    },
+                    {
+                        type: "Ənənəvi",
+                        price: "17",
+                        size: "Orta, 30 sm -  17 M",
+                    },
+                    {
+                        type: "Ənənəvi",
+                        price: "22",
+                        size: "Böyük, 35 sm -  22 M",
+                    },
+                    {
+                        type: "Nazik",
+                        price: "11",
+                        size: "Kiçik, 23 sm -  11 M",
+                    },
+                    {
+                        type: "Nazik",
+                        price: "17",
+                        size: "Orta, 30 sm -  17 M",
+                    },
+                    {
+                        type: "Nazik",
+                        price: "22",
+                        size: "Böyük, 35 sm -  22 M",
+                    },
+                ],
+                id: "WJX9dW58zb5a02-yfbSwc",
+            },
+            {
+                title: "Nyu Orleans",
+                composition:
+                    "Qarğıdalı, Qril Toyuq, Göbələk, Yaşıl Bibər, Sarımsaq Sousu, Mozzarella ",
+                img: "https://www.papajohns.az/images/Spaysi-Italyan-x%C4%B1r%C3%A7%C4%B1lt%C4%B1l%C4%B1-p-800.jpeg",
+                price: "10",
+                subcategory: ["cheeken"],
+                category: "pizza",
+                variations: [
+                    {
+                        type: "Ənənəvi",
+                        price: "10",
+                        size: "Kiçik, 23 sm -  10 M",
+                    },
+                    {
+                        type: "Ənənəvi",
+                        price: "15",
+                        size: "Orta, 30 sm -  15 M",
+                    },
+                    {
+                        type: "Ənənəvi",
+                        price: "21",
+                        size: "Böyük, 35 sm -  21 M",
+                    },
+                    {
+                        type: "Nazik",
+                        price: "10",
+                        size: "Kiçik, 23 sm -  10 M",
+                    },
+                    {
+                        type: "Nazik",
+                        price: "15",
+                        size: "Orta, 30 sm -  15 M",
+                    },
+                    {
+                        type: "Nazik",
+                        price: "21",
+                        size: "Böyük, 35 sm -  21 M",
+                    },
+                ],
+                id: "mUaeVzpr3vQATXbD1lL0p",
+            },
+            {
+                title: "Çiken Baffalo",
+                composition:
+                    "Ranç sousu, Çiken Poppersləri, Vetçina, Baffalo Sousu, Mozzarella ",
+                img: "https://www.papajohns.az/images/4-Pendir-x%C4%B1r%C3%A7%C4%B1lt%C4%B1l%C4%B1-p-800.jpeg",
+                price: "12",
+                subcategory: ["cheeken", "hot"],
+                category: "pizza",
+                variations: [
+                    {
+                        type: "Ənənəvi",
+                        price: "12",
+                        size: "Kiçik, 23 sm -  12 M",
+                    },
+                    {
+                        type: "Ənənəvi",
+                        price: "18",
+                        size: "Orta, 30 sm -  18 M",
+                    },
+                    {
+                        type: "Ənənəvi",
+                        price: "23",
+                        size: "Böyük, 35 sm -  23 M",
+                    },
+                    {
+                        type: "Nazik",
+                        price: "12",
+                        size: "Kiçik, 23 sm -  12 M",
+                    },
+                    {
+                        type: "Nazik",
+                        price: "18",
+                        size: "Orta, 30 sm -  18 M",
+                    },
+                    {
+                        type: "Nazik",
+                        price: "23",
+                        size: "Böyük, 35 sm -  23 M",
+                    },
+                ],
+                id: "5yREPOWxOJUcjyjBHiMsE",
+            },
+            {
+                title: "Çiken Göbələk",
+                composition:
+                    "Göbələk sousu, Qril toyuğu, Turşu xiyar, Göbələk, Mozzarella",
+                img: "https://www.papajohns.az/images/Pepperoni-x%C4%B1r%C3%A7%C4%B1lt%C4%B1l%C4%B1-p-800.jpeg",
+                price: "12",
+                subcategory: ["cheeken"],
+                category: "pizza",
+                variations: [
+                    {
+                        type: "Ənənəvi",
+                        price: "12",
+                        size: "Kiçik, 23 sm -  12 M",
+                    },
+                    {
+                        type: "Ənənəvi",
+                        price: "19",
+                        size: "Orta, 30 sm -  19 M",
+                    },
+                    {
+                        type: "Ənənəvi",
+                        price: "23",
+                        size: "Böyük, 35 sm -  23 M",
+                    },
+                    {
+                        type: "Nazik",
+                        price: "12",
+                        size: "Kiçik, 23 sm -  12 M",
+                    },
+                    {
+                        type: "Nazik",
+                        price: "19",
+                        size: "Orta, 30 sm -  19 M",
+                    },
+                    {
+                        type: "Nazik",
+                        price: "23",
+                        size: "Böyük, 35 sm -  23 M",
+                    },
+                ],
+                id: "zkhD85NasHA7kGgzqYu7Y",
+            },
+        ]
+
+
+        const cardContainer = document.getElementById("cardspizza");
+
+        pizzaData.forEach((pizza) => {
+            const card = document.createElement("div");
+            card.classList.add("pizza-card");
+
+            card.innerHTML = `
+        <img src="${pizza.img}" alt="${pizza.title}" class="pizza-img" />
+        <div class="pizza-details">
+            <h3>${pizza.title}</h3>
+            <p>${pizza.composition}</p>
+
+            <div class="pizza-price">${pizza.price}₼</div>
+        </div>
+    `;
+            cardContainer.appendChild(card);
+        });
+
+    </script>
+
+</body>
+
+</html>
