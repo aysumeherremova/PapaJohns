@@ -40,6 +40,11 @@
                 <div class="login">Giriş/Qeydiyyat</div>
             </div>
         </div>
+
+        <button class="mobile-menu-toggle">
+            <i class="fas fa-bars"></i>
+          </button>
+          
     </header>
 
     <div class="menu-bar">
@@ -109,6 +114,12 @@
 
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="app.js"></script>
+    <script>
+        document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
+            document.querySelector('.menu-bar .menu-list').classList.toggle('show');
+        });
+    </script>
+    
 </body>
 
 </html>

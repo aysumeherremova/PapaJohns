@@ -1,3 +1,4 @@
+
 const data = {
   papadias: [
     {
@@ -134,6 +135,3 @@ data.papadias.forEach((item) => {
             `;
   cardsContainer.appendChild(card);
 });
-
-
-

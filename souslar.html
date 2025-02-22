@@ -124,6 +124,9 @@
                 <div class="login">Giriş/Qeydiyyat</div>
             </div>
         </div>
+        <button class="mobile-menu-toggle">
+            <i class="fas fa-bars"></i>
+          </button>
     </header>
 
     <div class="menu-bar">
@@ -258,6 +261,12 @@
     `;
             cardContainer.appendChild(card);
         });
+
+  
+        document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
+            document.querySelector('.menu-bar .menu-list').classList.toggle('show');
+        });
+
     </script>
 
 </body>
