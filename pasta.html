@@ -14,8 +14,6 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
 
-
-
     <link rel="stylesheet" href="style.css">
     <style>
         * {
@@ -49,14 +47,14 @@
             font-size: 18px;
         }
 
-        #cards-salat {
+        #cards-pasta {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 20px;
             padding: 20px;
         }
 
-        .salat-card {
+        .cards-pasta {
             background: #fff;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -66,25 +64,26 @@
             transition: transform 0.3s ease-in-out;
         }
 
-        .salat-card:hover {
+        .cards-pasta:hover {
             transform: scale(1.05);
         }
 
-        .salat-img {
+        .pasta-img {
             width: 100%;
             height: auto;
             border-radius: 10px;
         }
 
-        .salat-details {
+        .pasta-details {
             padding: 10px;
         }
 
-        .salat-price {
+        .pasta-price {
             font-size: 18px;
             font-weight: bold;
             color: #e63946;
         }
+
     </style>
 </head>
 
@@ -136,7 +135,6 @@
         </div>
     </section>
 
-
     <div class="container">
         <div class="menu">
             <ul>
@@ -147,12 +145,8 @@
                 <li><a href="#">Acılı</a></li>
             </ul>
         </div>
-        <div id="cards-salat" class="cards-salat"></div>
-
-
+        <div id="cards-pasta"></div>
     </div>
-
-
 
     <footer class="footer" style="margin-top: 15px;">
         <div class="footer-container">
@@ -170,70 +164,52 @@
         </div>
     </footer>
 
-
-
     <script>
-        const salatData = [
+        const pastaData = [
             {
-                img: "https://order.papajohns.az/images/menu/PJ%20Azerbaijan/336x224_27375b9f0f16f820c97ce9d3c54ed8e8.jpg",
-                title: "Sezar Salatı",
+                img: "https://order.papajohns.az/images/menu/PJ%20Azerbaijan/336x224_a288bc9c11d13c2acf5a84267b407308.jpg",
+                title: "Pasta Super Papa",
                 composition:
-                    "Qril Toyuq, Aysberq Kahı, Suxari, Pomidor, Parmesan, Sezar Sousu",
+                    "Spagetti, Pepperoni, Vetçina, İtalyan Sosisləri, Yaşıl Bibər, Göbələk, Pizza Sous, Mozzarella ",
                 price: "9",
-                category: "salat",
+                category: "pasta",
                 variations: [],
-                id: "dnRddjSK2MyvNe5h20rNB",
+                id: "FHMPJoS82m0RYMQq6iB5h",
             },
             {
-                img: "https://order.papajohns.az/images/menu/PJ%20Azerbaijan/336x224_5791f4ffe0062ee2f97b366f079ce9e8.jpg",
-                title: "Yunan Salatı",
-                composition:
-                    "Xiyar, Pomidor, Aysberq Kahı, Qara Zeytun, Feta Pendiri, İtalyan Sousu, Oreqano, Yaşıl Bibər",
-                price: "6",
-                category: "salat",
+                img: "https://order.papajohns.az/images/menu/PJ%20Azerbaijan/336x224_2cc11cf0b81ea54520d03f9fc3abfbc3.jpg",
+                title: "Çiken Ranç Pasta",
+                composition: "Spagetti, Qril Toyuğu, Göbələk, Ranç Sousu, Mozzarella ",
+                price: "9",
+                category: "pasta",
                 variations: [],
-                id: "0jf9vuFBlBIoG2jjSBUn2",
+                id: "zZJgLH7n4Ki_81LWnM_qt",
             },
             {
-                img: "https://order.papajohns.az/images/menu/PJ%20Azerbaijan/336x224_4cffa0ed49e334a46557e0953fcaf7b2.jpg",
-                title: "Tərəvəz Salatı",
-                composition:
-                    "Xiyar, Pomidor, Aysberq Kahı, Qara Zeytun, Yaşıl Bibər, İtalyan Sousu",
-                price: "5",
-                category: "salat",
+                img: "https://order.papajohns.az/images/menu/PJ%20Azerbaijan/336x224_a577e417ead4d7702c65acacb3745b8d.jpg",
+                title: "Mama Pasta",
+                composition: "Spagetti, Parmezan, Oregano, Pizza Sous, Mozzarella ",
+                price: "7",
+                category: "pasta",
                 variations: [],
-                id: "exL_CFztVJmGQnnUY5-Ia",
-            },
-            {
-                img: "https://order.papajohns.az/images/menu/PJ%20Azerbaijan/336x224_7001464aefa6de30e1b1342322f645c2.jpg",
-                title: "Tuna Salatı",
-                composition:
-                    "Ton Balığı, Aysberq Kahı, Qara Zeytun, Qarğıdalı, Xiyar, İtalyan Sousu",
-                price: "8",
-                category: "salat",
-                variations: [],
-                id: "PK1RYCW7elEyIqRFrABQs",
+                id: "fKffI5lk0LMW6whzcHBs8",
             }
-        ]
+        ];
 
-        const cardContainerSalat = document.getElementById("cards-salat");
-
-        salatData.forEach((item) => {
+        pastaData.forEach((item) => {
             const card = document.createElement("div");
-            card.classList.add("salat-card");
+            card.classList.add("cards-pasta");
 
             card.innerHTML = `
-        <img src="${item.img}" alt="${item.title}" class="salat-img" />
-        <div class="salat-details">
-            <h3>${item.title}</h3>
-            <p>${item.composition}</p>
-            <div class="salat-price">${item.price}₼</div>
-        </div>
-    `;
-            cardContainerSalat.appendChild(card);
+            <img src="${item.img}" alt="${item.title}" class="pasta-img" />
+            <div class="pasta-details">
+                <h3>${item.title}</h3>
+                <p>${item.composition}</p>
+                <div class="pasta-price">${item.price}₼</div>
+            </div>
+        `;
+            document.getElementById("cards-pasta").appendChild(card);
         });
-
-
     </script>
 </body>
 

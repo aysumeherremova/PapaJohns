@@ -72,36 +72,7 @@ const data = {
   ],
 
 
-  pasta: [
-    {
-      img: "https://www.papajohns.az/uploads/images/pasta_super_papa.jpg",
-      title: "Pasta Super Papa",
-      composition:
-        "Spagetti, Pepperoni, Vetçina, İtalyan Sosisləri, Yaşıl Bibər, Göbələk, Pizza Sous, Mozzarella ",
-      price: "9",
-      category: "pasta",
-      variations: [],
-      id: "FHMPJoS82m0RYMQq6iB5h",
-    },
-    {
-      img: "https://www.papajohns.az/uploads/images/pasta_chicken_ranch.jpg",
-      title: "Çiken Ranç Pasta",
-      composition: "Spagetti, Qril Toyuğu, Göbələk, Ranç Sousu, Mozzarella ",
-      price: "9",
-      category: "pasta",
-      variations: [],
-      id: "zZJgLH7n4Ki_81LWnM_qt",
-    },
-    {
-      img: "https://www.papajohns.az/uploads/images/pasta_mamas_pasta.jpg",
-      title: "Mama Pasta",
-      composition: "Spagetti, Parmezan, Oregano, Pizza Sous, Mozzarella ",
-      price: "7",
-      category: "pasta",
-      variations: [],
-      id: "fKffI5lk0LMW6whzcHBs8",
-    },
-  ],
+
   souses: [
     {
       img: "https://www.papajohns.az/uploads/images/Ranch.jpg",
