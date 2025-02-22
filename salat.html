@@ -49,89 +49,43 @@
             font-size: 18px;
         }
 
-        .cards {
-            display: grid;
-            gap: 20px;
-            grid-template-columns: repeat(1, 1fr);
-            justify-items: center;
-            
-        }
+        #cards-salat {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
 
-        .card img {
-            max-width: 100%;
-            height: 150px;
-            object-fit: cover;
-            border-radius: 8px;
-        }
+.salat-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    padding: 15px;
+    transition: transform 0.3s ease-in-out;
+}
 
-        .card h3 {
-            margin: 10px 0;
-            font-size: 20px;
-            font-weight: bold;
-        }
+.salat-card:hover {
+    transform: scale(1.05);
+}
 
-        .card p {
-            font-size: 16px;
-            color: #555;
-        }
+.salat-img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
 
-        .card button {
-            margin-top: 10px;
-            padding: 10px;
-            background-color: #118715;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-            font-weight: bold;
-        }
+.salat-details {
+    padding: 10px;
+}
 
-        .card button:hover {
-            background-color: #1c8d21;
-        }
+.salat-price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #e63946;
+}
 
-        @media (min-width: 768px) {
-            .menu ul {
-                font-size: 23px;
-                margin-left: 20px;
-                gap: 19px;
-            }
-
-            .cards {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .cards {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-
-        @media (min-width: 1280px) {
-            .cards {
-                grid-template-columns: repeat(4, 1fr);
-            }
-        }
-
-        .select-button {
-            position: absolute;
-            right: 15px;
-            bottom: 15px;
-            padding: 10px 20px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-            font-weight: bold;
-        }
-
-        .select-button:hover {
-            background-color: #45a049;
-        }
     </style>
 </head>
 
@@ -194,7 +148,7 @@
                 <li><a href="#">Acılı</a></li>
             </ul>
         </div>
-        <div id="cards" class="cards"></div>
+        <div id="cards-salat" class="cards-salat"></div>
 
 
     </div>
@@ -219,9 +173,69 @@
 
 
 
+    <script>
+        const salatData = [
+            {
+                img: "https://order.papajohns.az/images/menu/PJ%20Azerbaijan/336x224_27375b9f0f16f820c97ce9d3c54ed8e8.jpg",
+                title: "Sezar Salatı",
+                composition:
+                    "Qril Toyuq, Aysberq Kahı, Suxari, Pomidor, Parmesan, Sezar Sousu",
+                price: "9",
+                category: "salat",
+                variations: [],
+                id: "dnRddjSK2MyvNe5h20rNB",
+            },
+            {
+                img: "https://order.papajohns.az/images/menu/PJ%20Azerbaijan/336x224_5791f4ffe0062ee2f97b366f079ce9e8.jpg",
+                title: "Yunan Salatı",
+                composition:
+                    "Xiyar, Pomidor, Aysberq Kahı, Qara Zeytun, Feta Pendiri, İtalyan Sousu, Oreqano, Yaşıl Bibər",
+                price: "6",
+                category: "salat",
+                variations: [],
+                id: "0jf9vuFBlBIoG2jjSBUn2",
+            },
+            {
+                img: "https://order.papajohns.az/images/menu/PJ%20Azerbaijan/336x224_4cffa0ed49e334a46557e0953fcaf7b2.jpg",
+                title: "Tərəvəz Salatı",
+                composition:
+                    "Xiyar, Pomidor, Aysberq Kahı, Qara Zeytun, Yaşıl Bibər, İtalyan Sousu",
+                price: "5",
+                category: "salat",
+                variations: [],
+                id: "exL_CFztVJmGQnnUY5-Ia",
+            },
+            {
+                img: "https://order.papajohns.az/images/menu/PJ%20Azerbaijan/336x224_7001464aefa6de30e1b1342322f645c2.jpg",
+                title: "Tuna Salatı",
+                composition:
+                    "Ton Balığı, Aysberq Kahı, Qara Zeytun, Qarğıdalı, Xiyar, İtalyan Sousu",
+                price: "8",
+                category: "salat",
+                variations: [],
+                id: "PK1RYCW7elEyIqRFrABQs",
+            }
+        ]
+
+        const cardContainerSalat = document.getElementById("cards-salat");
+
+        salatData.forEach((item) => {
+            const card = document.createElement("div");
+            card.classList.add("salat-card");
+
+            card.innerHTML = `
+        <img src="${item.img}" alt="${item.title}" class="salat-img" />
+        <div class="salat-details">
+            <h3>${item.title}</h3>
+            <p>${item.composition}</p>
+            <div class="salat-price">${item.price}₼</div>
+        </div>
+    `;
+            cardContainerSalat.appendChild(card);
+        });
 
 
-    <script src="data.js"></script>
+    </script>
 </body>
 
 </html>

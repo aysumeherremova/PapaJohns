@@ -71,49 +71,7 @@ const data = {
     },
   ],
 
-  
-  salat: [
-    {
-      img: "https://www.papajohns.az/uploads/images/Caesar%20Salad.jpg",
-      title: "Sezar Salatı",
-      composition:
-        "Qril Toyuq, Aysberq Kahı, Suxari, Pomidor, Parmesan, Sezar Sousu",
-      price: "9",
-      category: "salat",
-      variations: [],
-      id: "dnRddjSK2MyvNe5h20rNB",
-    },
-    {
-      img: "https://www.papajohns.az/uploads/images/Greek%20Salad.jpg",
-      title: "Yunan Salatı",
-      composition:
-        "Xiyar, Pomidor, Aysberq Kahı, Qara Zeytun, Feta Pendiri, İtalyan Sousu, Oreqano, Yaşıl Bibər",
-      price: "6",
-      category: "salat",
-      variations: [],
-      id: "0jf9vuFBlBIoG2jjSBUn2",
-    },
-    {
-      img: "https://www.papajohns.az/uploads/images/Garden%20Slad.jpg",
-      title: "Tərəvəz Salatı",
-      composition:
-        "Xiyar, Pomidor, Aysberq Kahı, Qara Zeytun, Yaşıl Bibər, İtalyan Sousu",
-      price: "5",
-      category: "salat",
-      variations: [],
-      id: "exL_CFztVJmGQnnUY5-Ia",
-    },
-    {
-      img: "https://www.papajohns.az/uploads/images/salads/Tuna%20Salad_no_tomato_Azer_158_1.jpg",
-      title: "Tuna Salatı",
-      composition:
-        "Ton Balığı, Aysberq Kahı, Qara Zeytun, Qarğıdalı, Xiyar, İtalyan Sousu",
-      price: "8",
-      category: "salat",
-      variations: [],
-      id: "PK1RYCW7elEyIqRFrABQs",
-    },
-  ],
+
   pasta: [
     {
       img: "https://www.papajohns.az/uploads/images/pasta_super_papa.jpg",
