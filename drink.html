@@ -47,7 +47,7 @@
             font-size: 18px;
         }
 
-        .sous-card {
+        .drink-card {
             border: 1px solid #ddd;
             border-radius: 8px;
             margin: 10px;
@@ -61,14 +61,14 @@
             overflow: hidden;
         }
 
-        .sous-img {
+        .drink-img {
             width: 100%;
             height: 200px;
             object-fit: cover;
             border-radius: 8px;
         }
 
-        .sous-details {
+        .drink-details {
             text-align: center;
             margin-top: 10px;
             height: calc(100% - 220px);
@@ -77,18 +77,18 @@
             justify-content: space-between;
         }
 
-        .sous-details h3 {
+        .drink-details h3 {
             font-size: 1.5em;
             margin-bottom: 10px;
         }
 
-        .sous-details p {
+        .drink-details p {
             font-size: 1em;
             color: #555;
             margin-bottom: 15px;
         }
 
-        .sous-variations {
+        .drink-variations {
             margin: 10px 0;
         }
 
@@ -98,7 +98,7 @@
             color: #777;
         }
 
-        .sous-price {
+        .drink-price {
             margin-top: 15px;
             font-size: 1.2em;
             font-weight: bold;
@@ -159,13 +159,14 @@
         <div class="menu">
             <ul>
                 <li><a href="#">Hamısı</a></li>
-                <li><a href="#">Toyuqlu</a></li>
-                <li><a href="#">Ət ilə</a></li>
-                <li><a href="#">Vegetarian</a></li>
-                <li><a href="#">Acılı</a></li>
+                <li><a href="#">Coca-Cola</a></li>
+                <li><a href="#">Sprite</a></li>
+                <li><a href="#">Fanta</a></li>
+                <li><a href="#">Meyvə Şirələri</a></li>
+                <li><a href="#">Ayran</a></li>
             </ul>
         </div>
-        <div id="cardsous" class="cardsous"></div>
+        <div id="carddrink" class="carddrink"></div>
     </div>
 
     <footer class="footer" style="margin-top: 15px;">
@@ -185,77 +186,119 @@
     </footer>
 
     <script>
-        const sousesData = [
+        const drinkData = [
             {
-                img: "https://order.papajohns.az/images/menu/PJ%20Azerbaijan/336x224_ecda9572693fc6a263ef917c0bc003e7.jpg",
-                title: "Ranç Sousu",
+                img: "https://order.papajohns.az/images/menu/PJ%20Azerbaijan/336x224_d33f50ba9123e71329db8e94b22ce050.jpg",
+                title: "Coca Cola 500ml",
                 composition: "",
-                price: "0.8",
-                category: "souses",
+                price: "2.5",
+                category: "icki",
                 variations: [],
-                id: "R6iGC1C98qT7Y4EDn9A5x",
+                variety: [],
+                id: "mOELfoWWgVpv80bcDqjjq",
             },
             {
-                img: "https://order.papajohns.az/images/menu/PJ%20Azerbaijan/336x224_731d5122d8dc1f4f267ac28c5beaf1d8.jpg",
-                title: "Barbekyu Sousu",
+                img: "https://order.papajohns.az/images/menu/PJ%20Azerbaijan/336x224_acc0ad8e2b510ede462e9b05eea4945f.jpg",
+                title: "Coca-Cola Şəkərsiz 500ml",
                 composition: "",
-                price: "0.8",
-                category: "souses",
+                price: "2.5",
+                category: "icki",
                 variations: [],
-                id: "RfbfLtlrFUnPIZYrjkP94",
+                variety: [],
+                id: "-1h3P3_WohQhZal5DDEXF",
             },
             {
-                img: "https://order.papajohns.az/images/menu/PJ%20Azerbaijan/336x224_51dc048ab0369b7f4589493eb65318ba.jpg",
-                title: "Sarımsaq Sousu",
+                img: "https://order.papajohns.az/images/menu/PJ%20Azerbaijan/336x224_a51ee83e40de114f24b48fe5ba457ac2.jpg",
+                title: "Sprite 500ml",
                 composition: "",
-                price: "0.8",
-                category: "souses",
+                price: "2.5",
+                category: "icki",
                 variations: [],
-                id: "VJJtPIERk_JdyXCxqyWES",
+                variety: [],
+                id: "hVq6OZcH0dzGMoMqfkyve",
             },
             {
-                img: "https://order.papajohns.az/images/menu/PJ%20Azerbaijan/336x224_b36655ac7ff9b64d2e066e1f69810621.jpg",
-                title: "Baffalo Sousu",
+                img: "https://order.papajohns.az/images/menu/PJ%20Azerbaijan/336x224_112470ad2d37edfe04e753674c1e9eb3.jpg",
+                title: "Meyvə Şirələri - Cappy",
                 composition: "",
-                price: "0.8",
-                category: "souses",
+                price: "1.5",
+                category: "icki",
                 variations: [],
-                id: "rdKpnzxGTjLMjNtq2lmnM",
+                variety: [
+                    "Portağal (200 ml) -  1.5 M",
+                    "Multivitamin (200 ml) -  1.5 M",
+                    "Albalı (200 ml) -  1.5 M",
+                    "Şaftalı (200 ml) -  1.5 M",
+                    "Alma (200 ml) -  1.5 M",
+                ],
+                id: "ngXXdWf0-bSFEvEzkcijK",
             },
             {
-                img: "https://order.papajohns.az/images/menu/PJ%20Azerbaijan/336x224_e3462215fb4a5ff50bdfd97ba54b59db.jpg",
-                title: "1000 Ada Sousu",
+                img: "https://order.papajohns.az/images/menu/PJ%20Azerbaijan/336x224_51b81194a6d9691903077b4ee059b15d.jpg",
+                title: "Ayran 200ml",
                 composition: "",
-                price: "0.8",
-                category: "souses",
+                price: "1.5",
+                category: "icki",
                 variations: [],
-                id: "-yEn5O7SS7e3bjaVkcpRP",
+                variety: ["Nanəli -  1.5 M", "Adi -  1.5 M"],
+                id: "wS3k04rZQ5JOlGGH_YC6Q",
             },
             {
-                img: "https://order.papajohns.az/images/menu/PJ%20Azerbaijan/336x224_7ea41c9b4d3ff7642e4af084dbe38ff5.jpg",
-                title: "Pizza Sousu",
+                img: "https://order.papajohns.az/images/menu/PJ%20Azerbaijan/336x224_f6ad66d40305f0f8ebc33aa25fc95b43.jpg",
+                title: "Fanta 500ml",
                 composition: "",
-                price: "0.8",
-                category: "souses",
+                price: "2.5",
+                category: "icki",
                 variations: [],
-                id: "XWIUvwpr7HxfPyHd1xPwx",
+                variety: [],
+                id: "wWIWoI2bPKXivuKxQFid0",
             },
+            {
+                img: "https://order.papajohns.az/images/menu/PJ%20Azerbaijan/336x224_4511509d48418ecaabe6fe83d55e4211.jpg",
+                title: "Qazsız Su 500ml",
+                composition: "",
+                price: "1",
+                category: "icki",
+                variations: [],
+                variety: [],
+                id: "pagGDP6yMZ31FSrW6hHqr",
+            },
+            {
+                img: "https://order.papajohns.az/images/menu/PJ%20Azerbaijan/336x224_afa0f635cc88cc071ad0294099723479.jpg",
+                title: "Qazlı Su 500ml",
+                composition: "",
+                price: "1",
+                category: "icki",
+                variations: [],
+                variety: [],
+                id: "kC6EeVDTMr0K9CPRMQeIU",
+            },
+            {
+                img: "https://order.papajohns.az/images/menu/PJ%20Azerbaijan/336x224_b66e27027a67e049ccfc650c42f62938.jpg",
+                title: "Fuse Tea, 500ml",
+                composition: "",
+                price: "3",
+                category: "icki",
+                variations: [],
+                variety: ["Şaftalı -  3 M", "Limon -  3 M", "Mango Ananas -  3 M"],
+                id: "IH0kTa907i600LNrOCAhW",
+            }
         ];
 
-        const cardContainer = document.getElementById("cardsous");
+        const cardContainer = document.getElementById("carddrink");
 
-        sousesData.forEach((sous) => {
+        drinkData.forEach((drink) => {
             const card = document.createElement("div");
-            card.classList.add("sous-card");
+            card.classList.add("drink-card");
 
             card.innerHTML = `
-        <img src="${sous.img}" alt="${sous.title}" class="sous-img" />
-        <div class="sous-details">
-            <h3>${sous.title}</h3>
-            <p>${sous.composition}</p>
-            <div class="sous-price">${sous.price}₼</div>
-        </div>
-    `;
+                <img src="${drink.img}" alt="${drink.title}" class="drink-img" />
+                <div class="drink-details">
+                    <h3>${drink.title}</h3>
+                    <p>${drink.composition}</p>
+                    <div class="drink-price">${drink.price}₼</div>
+                </div>
+            `;
             cardContainer.appendChild(card);
         });
     </script>
