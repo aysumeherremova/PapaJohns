@@ -71,64 +71,6 @@ const data = {
     },
   ],
 
-
-
-  souses: [
-    {
-      img: "https://www.papajohns.az/uploads/images/Ranch.jpg",
-      title: "Ranç Sousu",
-      composition: "",
-      price: "0.8",
-      category: "souses",
-      variations: [],
-      id: "R6iGC1C98qT7Y4EDn9A5x",
-    },
-    {
-      img: "https://www.papajohns.az/uploads/images/Barbeque.jpg",
-      title: "Barbekyu Sousu",
-      composition: "",
-      price: "0.8",
-      category: "souses",
-      variations: [],
-      id: "RfbfLtlrFUnPIZYrjkP94",
-    },
-    {
-      img: "https://www.papajohns.az/uploads/images/Garlic.jpg",
-      title: "Sarımsaq Sousu",
-      composition: "",
-      price: "0.8",
-      category: "souses",
-      variations: [],
-      id: "VJJtPIERk_JdyXCxqyWES",
-    },
-    {
-      img: "https://www.papajohns.az/uploads/images/Buffalo.jpg",
-      title: "Baffalo Sousu",
-      composition: "",
-      price: "0.8",
-      category: "souses",
-      variations: [],
-      id: "rdKpnzxGTjLMjNtq2lmnM",
-    },
-    {
-      img: "https://www.papajohns.az/uploads/images/Thousand-island.jpg",
-      title: "1000 Ada Sousu",
-      composition: "",
-      price: "0.8",
-      category: "souses",
-      variations: [],
-      id: "-yEn5O7SS7e3bjaVkcpRP",
-    },
-    {
-      img: "https://www.papajohns.az/uploads/images/Pizza.jpg",
-      title: "Pizza Sousu",
-      composition: "",
-      price: "0.8",
-      category: "souses",
-      variations: [],
-      id: "XWIUvwpr7HxfPyHd1xPwx",
-    },
-  ],
   icki: [
     {
       img: "https://www.papajohns.az/uploads/images/drinks/1cocacola.png",

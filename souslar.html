@@ -14,8 +14,6 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
 
-
-
     <link rel="stylesheet" href="style.css">
     <style>
         * {
@@ -49,41 +47,62 @@
             font-size: 18px;
         }
 
-        #cards-salat {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-            padding: 20px;
-        }
-
-        .salat-card {
-            background: #fff;
-            border-radius: 10px;
+        .sous-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin: 10px;
+            padding: 15px;
+            width: 300px;
+            height: 450px;
+            display: inline-block;
+            vertical-align: top;
+            background-color: #fff;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             overflow: hidden;
-            text-align: center;
-            padding: 15px;
-            transition: transform 0.3s ease-in-out;
         }
 
-        .salat-card:hover {
-            transform: scale(1.05);
-        }
-
-        .salat-img {
+        .sous-img {
             width: 100%;
-            height: auto;
-            border-radius: 10px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
         }
 
-        .salat-details {
-            padding: 10px;
+        .sous-details {
+            text-align: center;
+            margin-top: 10px;
+            height: calc(100% - 220px);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
-        .salat-price {
-            font-size: 18px;
+        .sous-details h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .sous-details p {
+            font-size: 1em;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .sous-variations {
+            margin: 10px 0;
+        }
+
+        .variation {
+            margin: 5px 0;
+            font-size: 0.9em;
+            color: #777;
+        }
+
+        .sous-price {
+            margin-top: 15px;
+            font-size: 1.2em;
             font-weight: bold;
-            color: #e63946;
+            color: #333;
         }
     </style>
 </head>
@@ -136,7 +155,6 @@
         </div>
     </section>
 
-
     <div class="container">
         <div class="menu">
             <ul>
@@ -147,12 +165,8 @@
                 <li><a href="#">Acılı</a></li>
             </ul>
         </div>
-        <div id="cards-salat" class="cards-salat"></div>
-
-
+        <div id="cardsous" class="cardsous"></div>
     </div>
-
-
 
     <footer class="footer" style="margin-top: 15px;">
         <div class="footer-container">
@@ -170,71 +184,82 @@
         </div>
     </footer>
 
-
-
     <script>
-        const salatData = [
+        const sousesData = [
             {
-                img: "https://order.papajohns.az/images/menu/PJ%20Azerbaijan/336x224_27375b9f0f16f820c97ce9d3c54ed8e8.jpg",
-                title: "Sezar Salatı",
-                composition:
-                    "Qril Toyuq, Aysberq Kahı, Suxari, Pomidor, Parmesan, Sezar Sousu",
-                price: "9",
-                category: "salat",
+                img: "https://order.papajohns.az/images/menu/PJ%20Azerbaijan/336x224_ecda9572693fc6a263ef917c0bc003e7.jpg",
+                title: "Ranç Sousu",
+                composition: "",
+                price: "0.8",
+                category: "souses",
                 variations: [],
-                id: "dnRddjSK2MyvNe5h20rNB",
+                id: "R6iGC1C98qT7Y4EDn9A5x",
             },
             {
-                img: "https://order.papajohns.az/images/menu/PJ%20Azerbaijan/336x224_5791f4ffe0062ee2f97b366f079ce9e8.jpg",
-                title: "Yunan Salatı",
-                composition:
-                    "Xiyar, Pomidor, Aysberq Kahı, Qara Zeytun, Feta Pendiri, İtalyan Sousu, Oreqano, Yaşıl Bibər",
-                price: "6",
-                category: "salat",
+                img: "https://order.papajohns.az/images/menu/PJ%20Azerbaijan/336x224_731d5122d8dc1f4f267ac28c5beaf1d8.jpg",
+                title: "Barbekyu Sousu",
+                composition: "",
+                price: "0.8",
+                category: "souses",
                 variations: [],
-                id: "0jf9vuFBlBIoG2jjSBUn2",
+                id: "RfbfLtlrFUnPIZYrjkP94",
             },
             {
-                img: "https://order.papajohns.az/images/menu/PJ%20Azerbaijan/336x224_4cffa0ed49e334a46557e0953fcaf7b2.jpg",
-                title: "Tərəvəz Salatı",
-                composition:
-                    "Xiyar, Pomidor, Aysberq Kahı, Qara Zeytun, Yaşıl Bibər, İtalyan Sousu",
-                price: "5",
-                category: "salat",
+                img: "https://order.papajohns.az/images/menu/PJ%20Azerbaijan/336x224_51dc048ab0369b7f4589493eb65318ba.jpg",
+                title: "Sarımsaq Sousu",
+                composition: "",
+                price: "0.8",
+                category: "souses",
                 variations: [],
-                id: "exL_CFztVJmGQnnUY5-Ia",
+                id: "VJJtPIERk_JdyXCxqyWES",
             },
             {
-                img: "https://order.papajohns.az/images/menu/PJ%20Azerbaijan/336x224_7001464aefa6de30e1b1342322f645c2.jpg",
-                title: "Tuna Salatı",
-                composition:
-                    "Ton Balığı, Aysberq Kahı, Qara Zeytun, Qarğıdalı, Xiyar, İtalyan Sousu",
-                price: "8",
-                category: "salat",
+                img: "https://order.papajohns.az/images/menu/PJ%20Azerbaijan/336x224_b36655ac7ff9b64d2e066e1f69810621.jpg",
+                title: "Baffalo Sousu",
+                composition: "",
+                price: "0.8",
+                category: "souses",
                 variations: [],
-                id: "PK1RYCW7elEyIqRFrABQs",
-            }
-        ]
+                id: "rdKpnzxGTjLMjNtq2lmnM",
+            },
+            {
+                img: "https://order.papajohns.az/images/menu/PJ%20Azerbaijan/336x224_e3462215fb4a5ff50bdfd97ba54b59db.jpg",
+                title: "1000 Ada Sousu",
+                composition: "",
+                price: "0.8",
+                category: "souses",
+                variations: [],
+                id: "-yEn5O7SS7e3bjaVkcpRP",
+            },
+            {
+                img: "https://order.papajohns.az/images/menu/PJ%20Azerbaijan/336x224_7ea41c9b4d3ff7642e4af084dbe38ff5.jpg",
+                title: "Pizza Sousu",
+                composition: "",
+                price: "0.8",
+                category: "souses",
+                variations: [],
+                id: "XWIUvwpr7HxfPyHd1xPwx",
+            },
+        ];
 
-        const cardContainerSalat = document.getElementById("cards-salat");
+        const cardContainer = document.getElementById("cardsous");
 
-        salatData.forEach((item) => {
+        sousesData.forEach((sous) => {
             const card = document.createElement("div");
-            card.classList.add("salat-card");
+            card.classList.add("sous-card");
 
             card.innerHTML = `
-        <img src="${item.img}" alt="${item.title}" class="salat-img" />
-        <div class="salat-details">
-            <h3>${item.title}</h3>
-            <p>${item.composition}</p>
-            <div class="salat-price">${item.price}₼</div>
+        <img src="${sous.img}" alt="${sous.title}" class="sous-img" />
+        <div class="sous-details">
+            <h3>${sous.title}</h3>
+            <p>${sous.composition}</p>
+            <div class="sous-price">${sous.price}₼</div>
         </div>
     `;
-            cardContainerSalat.appendChild(card);
+            cardContainer.appendChild(card);
         });
-
-
     </script>
+
 </body>
 
 </html>
