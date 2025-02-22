@@ -85,6 +85,12 @@
             font-weight: bold;
             color: #e63946;
         }
+
+        @media (max-width: 768px) {
+            #cards-salat {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 
@@ -107,7 +113,7 @@
         </div>
         <button class="mobile-menu-toggle">
             <i class="fas fa-bars"></i>
-          </button>
+        </button>
     </header>
 
     <div class="menu-bar">
@@ -237,7 +243,7 @@
         });
 
 
-        document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
+        document.querySelector('.mobile-menu-toggle').addEventListener('click', function () {
             document.querySelector('.menu-bar .menu-list').classList.toggle('show');
         });
 

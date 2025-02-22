@@ -18,7 +18,7 @@
 
     <link rel="stylesheet" href="style.css">
     <style>
- * {
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -48,57 +48,81 @@
             color: #363636;
             font-size: 18px;
         }
+
         #cards-lunch {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: space-between;
-}
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-between;
+        }
 
-.lunch-card {
-    width: calc(25% - 20px); 
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    text-align: center;
-    transition: transform 0.3s ease-in-out;
-}
+        #cards-lunch {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-between;
+        }
 
-.lunch-card:hover {
-    transform: translateY(-5px);
-}
+        .lunch-card {
+            width: calc(25% - 20px);
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+        }
 
-.lunch-img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-    border-bottom: 2px solid #ddd;
-}
+        .lunch-card:hover {
+            transform: translateY(-5px);
+        }
 
-.lunch-details {
-    padding: 15px;
-}
+        .lunch-img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-bottom: 2px solid #ddd;
+        }
 
-.lunch-details h3 {
-    font-size: 18px;
-    margin-bottom: 8px;
-    color: #333;
-}
+        .lunch-details {
+            padding: 15px;
+        }
 
-.lunch-details p {
-    font-size: 14px;
-    color: #666;
-}
+        .lunch-details h3 {
+            font-size: 18px;
+            margin-bottom: 8px;
+            color: #333;
+        }
 
-.lunch-price {
-    font-size: 16px;
-    font-weight: bold;
-    color: #e63946;
-    margin-top: 10px;
-}
+        .lunch-details p {
+            font-size: 14px;
+            color: #666;
+        }
 
+        .lunch-price {
+            font-size: 16px;
+            font-weight: bold;
+            color: #e63946;
+            margin-top: 10px;
+        }
 
+        @media (max-width: 1200px) {
+            .lunch-card {
+                width: calc(33.33% - 20px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .lunch-card {
+                width: calc(50% - 20px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .lunch-card {
+                width: 100%;
+            }
+        }
     </style>
 </head>
 
@@ -121,9 +145,9 @@
         </div>
         <button class="mobile-menu-toggle">
             <i class="fas fa-bars"></i>
-          </button>
-          
-          
+        </button>
+
+
     </header>
 
     <div class="menu-bar">
@@ -360,7 +384,7 @@
 
 
 
-        document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
+        document.querySelector('.mobile-menu-toggle').addEventListener('click', function () {
             document.querySelector('.menu-bar .menu-list').classList.toggle('show');
         });
 

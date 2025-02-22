@@ -47,12 +47,6 @@
             font-size: 18px;
         }
 
-        #cards-pasta {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-            padding: 20px;
-        }
 
         .cards-pasta {
             background: #fff;
@@ -84,6 +78,25 @@
             color: #e63946;
         }
 
+        #cards-pasta {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            padding: 20px;
+        }
+
+
+        @media (max-width: 768px) {
+            #cards-pasta {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            #cards-pasta {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 
@@ -106,7 +119,7 @@
         </div>
         <button class="mobile-menu-toggle">
             <i class="fas fa-bars"></i>
-          </button>
+        </button>
     </header>
 
     <div class="menu-bar">
@@ -215,7 +228,7 @@
         });
 
 
-        document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
+        document.querySelector('.mobile-menu-toggle').addEventListener('click', function () {
             document.querySelector('.menu-bar .menu-list').classList.toggle('show');
         });
 

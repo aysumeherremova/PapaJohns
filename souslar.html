@@ -104,6 +104,27 @@
             font-weight: bold;
             color: #333;
         }
+
+        @media screen and (max-width: 768px) {
+            .sous-card {
+                width: 100%;
+                height: auto;
+                margin: 10px 0;
+                padding: 10px;
+            }
+
+            .sous-img {
+                height: 150px;
+            }
+
+            .sous-details h3 {
+                font-size: 1.2em;
+            }
+
+            .sous-price {
+                font-size: 1.1em;
+            }
+        }
     </style>
 </head>
 
@@ -126,7 +147,7 @@
         </div>
         <button class="mobile-menu-toggle">
             <i class="fas fa-bars"></i>
-          </button>
+        </button>
     </header>
 
     <div class="menu-bar">
@@ -262,8 +283,8 @@
             cardContainer.appendChild(card);
         });
 
-  
-        document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
+
+        document.querySelector('.mobile-menu-toggle').addEventListener('click', function () {
             document.querySelector('.menu-bar .menu-list').classList.toggle('show');
         });
 
