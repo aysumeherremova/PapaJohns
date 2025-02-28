@@ -221,7 +221,7 @@
                 price: "8",
                 category: "salat",
                 variations: [],
-                id: "PK1RYCW7elEyIqRFrABQs",N
+                id: "PK1RYCW7elEyIqRFrABQs",
             }
         ]
 
@@ -232,13 +232,12 @@
             card.classList.add("salat-card");
 
             card.innerHTML = `
-        <img src="${item.img}" alt="${item.title}" class="salat-img" />
-        <div class="salat-details">
-            <h3>${item.title}</h3>
-            <p>${item.composition}</p>
-            <div class="salat-price">${item.price}₼</div>
-        </div>
-    `;
+                <img src="${item.img}" alt="${item.title}" class="salat-img" />
+                <div class="salat-details">
+                    <h3>${item.title}</h3>
+                    <p>${item.composition}</p>
+                    <div class="salat-price">${item.price}₼</div>
+                </div> `;
             cardContainerSalat.appendChild(card);
         });
 
